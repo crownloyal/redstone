@@ -10,5 +10,5 @@ export default DS.Model.extend({
   description: DS.attr(),
   start_date: DS.attr(),
 
-  // project: DS.belongsTo('project')
+  project: DS.belongsTo('project')
 });
