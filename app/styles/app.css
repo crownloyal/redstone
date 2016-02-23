@@ -1,0 +1,26 @@
+/*** importing Skeleton via CND ***/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css');
+
+/*** TYPO ***/
+#title { margin-bottom: -1rem; }
+a, .red { color: #cc0000;
+		  text-decoration: none;}
+a:hover { color: #cc0000;
+		  text-decoration: underline; }
+nav a { margin: 0 1rem; }
+nav a:first-child { margin-left: 0; }
+.active { font-weight: 700; }
+
+/*** LAYOUT ***/
+header { margin-bottom: 0.5rem;
+		 padding: 1em; }
+nav { padding: 1rem 0; }
+
+section { padding-top: 0.3rem; }
+
+footer {
+	padding: 1em;
+	background-color: #555;
+	color: #FFF;
+}

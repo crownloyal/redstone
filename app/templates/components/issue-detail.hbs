@@ -1,0 +1,10 @@
+<p><strong>Ticket #</strong> {{model.issues.id}}<br />
+<strong>Project:</strong> {{model.projects.project.name}}<br />
+<strong>Tracker:</strong> {{model.issue.tracker.name}}<br />
+<strong>Status:</strong> {{issues.status.name}}<br />
+<strong>Priority:</strong> {{issue.priority.name}}<br />
+<strong>Author:</strong> {{issues.author.name}}</p>
+
+<hr />
+
+{{yield}}
