@@ -3,7 +3,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css');
 
 /*** TYPO ***/
-#title { margin-bottom: -1rem; }
 a, .red { color: #cc0000;
 		  text-decoration: none;}
 a:hover { color: #cc0000;
@@ -11,16 +10,18 @@ a:hover { color: #cc0000;
 nav a { margin: 0 1rem; }
 nav a:first-child { margin-left: 0; }
 .active { font-weight: 700; }
+.rightAligned { float: right; }
 
 /*** LAYOUT ***/
 header { margin-bottom: 0.5rem;
-		 padding: 1em; }
-nav { padding: 1rem 0; }
+		 padding: 1rem; }
+nav { padding: 1rem 0;
+	  height: 2rem; }
 
 section { padding-top: 0.3rem; }
 
 footer {
-	padding: 1em;
-	background-color: #555;
-	color: #FFF;
+	padding: 1rem;
+	background-color: #333;
+	color: #FFF !important;
 }

@@ -6,7 +6,7 @@
 		{{#each model.issues as |issues|}}
 			<div class="one-third column">
 			<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}{{/link-to}}<br />
-			   <strong>Project:</strong> {{issues.project.name}}<br />
+			   <strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
 			   <strong>Tracker:</strong> {{issues.tracker.name}}<br /></p></div>
 		{{else}}
 			<div class="one-half column"><p>Hang on a second...</p></div>

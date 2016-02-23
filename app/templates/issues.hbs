@@ -1,5 +1,5 @@
 <p><strong>Ticket #</strong> {{model.id}}<br />
-<strong>Project:</strong> {{model.project.name}}<br />
+<strong>Project:</strong> {{#link-to 'projects' model.project.id}}{{model.project.name}}{{/link-to}}<br />
 <strong>Tracker:</strong> {{model.tracker.name}}<br />
 <strong>Status:</strong> {{model.status.name}}<br />
 <strong>Priority:</strong> {{model.priority.name}}<br />
@@ -7,6 +7,7 @@
 
 <hr />
 
+<h5>{{model.subject}}</h5>
 <p>
 {{model.description}}
 </p>

@@ -1,15 +1,21 @@
-	<header>
-		<nav class="row">
+	<header class="row">
+		<span class="one-half column">
+			<img id="logo" class="two columns" src="assets/Redstone.png">
+			<h2 id="title" class="three columns" ><strong class="red">Red</strong>stone</h2>
+			<!-- span id="tagline" class="two columns">- Redmine tracking fast forward</span-->
+		</span>
+
+		<nav class="one-third column">
 			{{link-to 'Home' 'index'}}
 			{{link-to 'What is this?' 'about'}}
-		</nav>
-
-		<h2 id="title"><strong class="red">Red</strong>stone</h2>
-		<span id="tagline">- Redmine tracking fast forward</span>
+		<a href=""></a>
+	</nav>
 	</header>
 	<div class="container">
 		{{outlet}}
 	</div>
-	<footer>
-		<p>This page was created with love & ember.js</p>
+	<footer class="row">
+		<p class="one-half column">This page was created with love & <a href="http://emberjs.com">ember.js</a><br />
+		Powered by <a href="http://www.redmine.org/projects/redmine/wiki/Rest_api">Redmine REST API</a></p>
+		<p class="one-half rightAligned">{{link-to 'What is this?' 'about'}}</p>
 	</footer>
