@@ -4,7 +4,7 @@
 
 	{{#each model.issues as |issues|}}
 		<ul>
-			<li>{{#link-to 'issues' model.issue.id}}{{model.issue.id}}{{/link-to}}</li>
+			<li>{{#link-to 'issues' issues}}{{issues.id}}{{/link-to}}</li>
 		</ul>
 	{{else}}
 		<p>There are no issues in this project</p>
