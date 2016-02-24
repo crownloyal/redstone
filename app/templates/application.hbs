@@ -1,15 +1,11 @@
 	<header class="row">
-
-		{{#link-to 'index' class="one columns" id="headerLogo"}}
-			<img id="logo"  src="assets/Redstone.png">
-		{{/link-to}}
 		<div class="container">
 			<span class="one-half column">
-				<h2 id="title" class="three columns" ><strong class="red">Red</strong>stone</h2>
+				<h2 id="title"><strong class="red">Red</strong>stone</h2>
 				<!-- span id="tagline" class="two columns">- Redmine tracking fast forward</span-->
 			</span>
 
-			<nav class="one-half column rightAligned">
+			<nav class="one-half column">
 				{{link-to 'Dashboard' 'index'}}
 			</nav>
 		</div>
@@ -19,11 +15,18 @@
 	</div>
 	<footer class="row">
 		<div class="container">
-			<p class="one-half column">This page was created with love & <a href="http://emberjs.com">ember.js</a><br />
-			Powered by <a href="http://www.redmine.org/projects/redmine/wiki/Rest_api">Redmine REST API</a></p>
-			<p class="one-half rightAligned">
-				{{link-to 'What is this?' 'about'}}<br />
-				<a href="mailto:dominic.brause@emc.com">Ideas?</a>
+			<div class="two-thirds column">
+				<p>This page was created with love & <a href="http://emberjs.com">ember.js</a><br />
+				Powered by <a href="http://www.redmine.org/projects/redmine/wiki/Rest_api">Redmine REST API</a></p>
+				<p>
+					{{link-to 'What is this place?' 'about'}}<br />
+					<a href="mailto:dominic.brause@emc.com">Ideas?</a><br />
+				</p>
+			</div>
+			<p class="one-third column">
+				{{#link-to 'index' id="headerLogo"}}
+					<img id="logo" class="rightAligned"  src="assets/Redstone.png">
+				{{/link-to}}
 			</p>
 		</div>
 	</footer>
