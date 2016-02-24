@@ -8,11 +8,7 @@
 
 	{{#if search}}
 		<p>Here are the results for {{search}}</p>
-	{{else}}
-		<p>Here is a full list of current issues</p>
-	{{/if}}
 
-	{{#if search}}
 		{{#each search as |issues|}}
 			<div class="one-third column">
 				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}Sample{{/link-to}}<br />
@@ -21,6 +17,8 @@
 		{{/each}}
 
 	{{else}}
+		<p>Here is a full list of current issues</p>
+
 		<div class="row">
 			{{#each model.issues as |issues|}}
 				<div class="one-third column">
