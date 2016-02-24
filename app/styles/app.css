@@ -1,16 +1,22 @@
 /*** TYPO ***/
 a, .red { color: #cc0000;
-		  text-decoration: none;}
-a:hover { color: #cc0000;
-		  text-decoration: underline; }
-nav a { margin: 0 1rem; }
-nav a:first-child { margin-left: 0; }
+		  text-decoration: none; }
+
+nav a { margin: 0 1rem;
+		color: #FFF; }
 .active { font-weight: 700; }
 .rightAligned { float: right; }
 
 /*** LAYOUT ***/
-header { margin-bottom: 0.5rem;
-		 padding: 1rem; }
+header, footer {
+	padding: 1rem;
+	background-color: #333;
+	color: #FFF !important;
+}
+header {
+	height: 5rem;
+	margin-bottom: 2rem; }
+
 header img#logo {
 	max-height: 4.5rem;
 	max-width: 4.5rem;
@@ -18,13 +24,9 @@ header img#logo {
     margin-left: auto;
     margin-right: auto;
 }
-nav { padding: 1rem 0;
-	  height: 2rem; }
+
+nav {
+	padding: 1rem 0;
+	height: 2rem; }
 
 section { padding-top: 0.3rem; }
-
-footer {
-	padding: 1rem;
-	background-color: #333;
-	color: #FFF !important;
-}

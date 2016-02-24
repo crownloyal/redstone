@@ -1,15 +1,20 @@
 	<header class="row">
-		<span class="one-half column">
-			{{#link-to 'index'}}<img id="logo" class="two columns" src="assets/Redstone.png">{{/link-to}}
-			<h2 id="title" class="three columns" ><strong class="red">Red</strong>stone</h2>
-			<!-- span id="tagline" class="two columns">- Redmine tracking fast forward</span-->
-		</span>
 
-		<nav class="one-third column">
-			{{link-to 'Dashboard' 'index'}}
-			{{link-to 'What is this?' 'about'}}
-		<a href=""></a>
-	</nav>
+		{{#link-to 'index' class="one columns" id="headerLogo"}}
+			<img id="logo"  src="assets/Redstone.png">
+		{{/link-to}}
+		<div class="container">
+			<span class="one-half column">
+				<h2 id="title" class="three columns" ><strong class="red">Red</strong>stone</h2>
+				<!-- span id="tagline" class="two columns">- Redmine tracking fast forward</span-->
+			</span>
+
+			<nav class="one-third column rightAligned">
+				{{link-to 'Dashboard' 'index'}}
+				{{link-to 'What is this?' 'about'}}
+			<a href=""></a>
+			</nav>
+		</div>
 	</header>
 	<div class="container">
 		{{outlet}}
