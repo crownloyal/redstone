@@ -1,9 +1,9 @@
 <p><strong>Ticket #</strong> {{model.id}}<br />
 <strong>Project:</strong> {{model.name}}<br />
 <strong>Issues related:</strong></p>
-	{{#each model.issues as |projects|}}
+	{{#each model.issues as |issues|}}
 		<ul>
-			<li>{{#link-to 'issues' model.name}}{{model.name}}{{/link-to}}</li>
+			<li>{{#link-to 'issues' model.issue.id}}{{model.issue.id}}{{/link-to}}</li>
 		</ul>
 	{{else}}
 		<p>There are no issues in this project</p>

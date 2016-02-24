@@ -1,15 +1,36 @@
+<h4>Dashboard</h4>
+
 <section>
-	<div class="intro">
-		<p>We were wondering what engineering is actually doing all day, so we thought we create a webpage which tracks all changes which are all on the engineering project in REDMINE</p>
-	</div>
-	<div class="row">
-		{{#each model.issues as |issues|}}
+
+	{{input value=search placeholder="Search..."}}
+
+<hr />
+
+	{{#if search}}
+		<p>Here are the results for {{search}}</p>
+	{{else}}
+		<p>Here is a full list of current issues</p>
+	{{/if}}
+
+	{{#if search}}
+		{{#each search as |issues|}}
 			<div class="one-third column">
-			<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}{{/link-to}}<br />
-			   <strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
-			   <strong>Tracker:</strong> {{issues.tracker.name}}<br /></p></div>
-		{{else}}
-			<div class="one-half column"><p>Hang on a second...</p></div>
+				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}Sample{{/link-to}}<br />
+				<strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
+				<strong>Tracker:</strong> {{issues.tracker.name}}<br /></p></div>
 		{{/each}}
-	</div>
+
+	{{else}}
+		<div class="row">
+			{{#each model.issues as |issues|}}
+				<div class="one-third column">
+				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}{{/link-to}}<br />
+				   <strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
+				   <strong>Tracker:</strong> {{issues.tracker.name}}<br /></p></div>
+			{{else}}
+				<div class="one-half column"><p>Hang on a second...</p></div>
+			{{/each}}
+		</div>
+	{{/if}}
+
 </section>
