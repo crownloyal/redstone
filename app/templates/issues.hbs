@@ -24,4 +24,8 @@
 
 <h5>Activity</h5>
 
-{{area-chart data=issues.journal options=options}}
+{{#each model.issue as |issues|}}
+	{{model.issues.journals.created_on}}
+{{/each}}
+
+{{area-chart data=model.issues.journals.created_on options=options}}

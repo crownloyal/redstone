@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model(params) {
-		return this.store.peekRecord('issue', params.id);
+		return this.store.findRecord('issue', params.id);
 	}
 });
