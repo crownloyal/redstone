@@ -1,11 +1,19 @@
 <h4>Dashboard</h4>
 
-<section>
-
-	{{input value=search placeholder="Search..."}}
+<section id="dashboard" class="row">
+	<div class="two-thirds column">
+		{{input type="search" value=search placeholder="Search..."}}
+	</div>
+	<div class="one-third column">
+		<p class="note">
+			The search allows you to look through issues and projects - ultimately enableling you too add multiple ones and to generate a graph.
+		</p>
+	</div>
+</section>
 
 <hr />
 
+<section>
 	{{#if search}}
 		<p>Here are the results for {{search}}</p>
 
@@ -13,7 +21,9 @@
 			<div class="one-third column">
 				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}Sample{{/link-to}}<br />
 				<strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
-				<strong>Tracker:</strong> {{issues.tracker.name}}<br /></p></div>
+				<strong>Subject:</strong> {{issues.subject}}<br />
+				<strong>Last updated:</strong> {{moment-from-now model.updated_on interval=1000}}</p>
+			</div>
 		{{/each}}
 
 	{{else}}
@@ -24,7 +34,9 @@
 				<div class="one-third column">
 				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}{{/link-to}}<br />
 				   <strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
-				   <strong>Tracker:</strong> {{issues.tracker.name}}<br /></p></div>
+				   <!--strong>Subject:</strong> {{issues.subject}}<br /-->
+				   <strong>Last updated:</strong> {{moment-from-now issues.updated_on}}</p>
+				</div>
 			{{else}}
 				<div class="one-half column"><p>Hang on a second...</p></div>
 			{{/each}}

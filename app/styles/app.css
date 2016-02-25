@@ -2,7 +2,7 @@
 a, .red { color: #cc0000;
 		  text-decoration: none; }
 
-nav a { margin: 0 1rem;
+nav a { margin: 0 1em;
 		color: #FFF; }
 .active { font-weight: 700; }
 .rightAligned { float: right; }
@@ -10,12 +10,17 @@ nav a { margin: 0 1rem;
 /*** LAYOUT ***/
 header, footer {
 	padding: 1rem;
-	background-color: #252525;
-	color: #FFF !important;
+	background-color: #352525;
+	color: #fff;
 }
 header {
 	height: 5rem;
 	margin-bottom: 2rem; }
+
+/*** fixing stupid alignments - might need to think of something better ***/
+header .column:first-child { margin-right: 0; }
+header nav a:first-child { margin-left: 0; }
+#dashboard .column:first-child { margin-right: 0; }
 
 footer img#logo {
 	max-height: 4.5rem;
@@ -30,3 +35,11 @@ nav {
 	height: 2rem; }
 
 section { padding-top: 0.3rem; }
+
+/*** Custom Styles ***/
+.note {
+	background-color: #ffffcc;
+	border: 1px solid #f9d100;
+	padding: 1rem;
+	border-radius: 4px;
+}
