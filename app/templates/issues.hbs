@@ -14,9 +14,14 @@
 		<strong>Assigned to:</strong> {{model.assigned_to.name}}
 	</div>
 </section>
+
 <hr />
 
 <h5>{{model.subject}}</h5>
-<p>
-{{model.description}}
-</p>
+<p>{{model.description}}</p>
+
+<hr />
+
+<h5>Activity</h5>
+
+{{area-chart data=issues.journal options=options}}

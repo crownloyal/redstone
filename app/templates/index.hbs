@@ -6,23 +6,38 @@
 	</div>
 	<div class="one-third column">
 		<p class="note">
-			The search allows you to look through issues and projects - ultimately enableling you too add multiple ones and to generate a graph.
+			The search allows you to look through issues and projects - ultimately enableling you too add multiple ones and to generate an activity graph.
 		</p>
 	</div>
 </section>
 
 <hr />
 
+{{!-- {{#filter-content placeholder="Filter search"
+ content=issues properties="model.issue.id" as |fc|}}
+  <ul class="results">
+    {{#each fc.filteredContent as |issues|}}
+      <li>{{issues.id}} – {{issues.subject}}</li>
+    {{/each}}
+  </ul>
+{{/filter-content}} --}}
+
 <section>
 	{{#if search}}
 		<p>Here are the results for {{search}}</p>
 
-		{{#each search as |issues|}}
+		{{#each issue as |search|}}
 			<div class="one-third column">
 				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}Sample{{/link-to}}<br />
 				<strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
 				<strong>Subject:</strong> {{issues.subject}}<br />
-				<strong>Last updated:</strong> {{moment-from-now model.updated_on interval=1000}}</p>
+				<strong>Last updated:</strong>
+				{{#if issues.updated_on}}
+					{{moment-from-now model.updated_on interval=1000}}
+				{{else}}
+					Error.
+				{{/if}}
+				</p>
 			</div>
 		{{/each}}
 

@@ -1,6 +1,7 @@
 /*** TYPO ***/
 a, .red { color: #cc0000;
 		  text-decoration: none; }
+.pink { color: #FF69B4; }
 
 nav a { margin: 0 1em;
 		color: #FFF; }
