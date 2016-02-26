@@ -1,11 +1,15 @@
 <section class="row">
 
+<h5>Issue {{model.id}}</h5>
+
 	<div class="one-half column">
-		<p><strong>Ticket #</strong> {{model.id}}<br />
+		<p>
+		<strong>Ticket #</strong> {{model.id}}<br />
 		<strong>Project:</strong> {{#link-to 'projects' model.project.id}}{{model.project.name}}{{/link-to}}<br />
 		<strong>Tracker:</strong> {{model.tracker.name}}<br />
 		<strong>Priority:</strong> {{model.priority.name}}<br />
-		<strong>Author:</strong> {{model.author.name}}</p>
+		<strong>Author:</strong> {{model.author.name}}
+		</p>
 	</div>
 	<div class="one-half column">
 		<strong>Status:</strong> {{model.status.name}}<br />
@@ -24,8 +28,20 @@
 
 <h5>Activity</h5>
 
-{{#each model.issue as |issues|}}
-	{{model.issues.journals.created_on}}
-{{/each}}
+{{#if activity}}
+	{{activity}}<br />
+{{else}}
+	<p>No activity</p>
+{{/if}}
 
-{{area-chart data=model.issues.journals.created_on options=options}}
+{{#each-in model.journals as |index id|}}
+    Grabbing all objects : {{index}} <br />
+    {{#each-in id as |keys value|}}
+    	   	Key: {{keys}} -- Value: <strong>{{value}}</strong><br />
+    {{/each-in}}
+	<br />
+{{else}}
+	<p>There was no activity.</p>
+{{/each-in}}
+
+{{area-chart data=model.issue.activity options=options}}
