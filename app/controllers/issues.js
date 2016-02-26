@@ -2,22 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-	search: Ember.computed('id', function() {
-    			return this.get('issues').filterBy('id');
-  	}),
+	setupController: Ember.computed(function(controller, model){
+		controller.set('model', model);
+	}),
 
-	activity: Ember.computed('journals', function() {
-				var issueActivity = Ember.A([]),
-					records = this.get('created_on');
+	activity: Ember.computed('model', function() {
+		var issueActivity = Ember.A([['Date', 'Comments']]),
+			tempArray = [],
+			data = this.get('model');
 
-				for(var index in records) {
-
-					issueActivity.push(index)
-					// for (var created_on of index) {
-					// 	issueActivity.push(created_on);
-					// }
-				}
-
-				return records;
+		return data;
 	})
 });

@@ -29,19 +29,14 @@
 <h5>Activity</h5>
 
 {{#if activity}}
-	{{activity}}<br />
+	{{activity}}
+	{{area-chart data=activity options=options}}
 {{else}}
-	<p>No activity</p>
+<p>There was no activity on this ticket</p>
 {{/if}}
 
 {{#each-in model.journals as |index id|}}
-    Grabbing all objects : {{index}} <br />
-    {{#each-in id as |keys value|}}
-    	   	Key: {{keys}} -- Value: <strong>{{value}}</strong><br />
-    {{/each-in}}
-	<br />
+    {{id.user.name}}: {{moment-format id.created_on}}<br/>
 {{else}}
 	<p>There was no activity.</p>
 {{/each-in}}
-
-{{area-chart data=model.issue.activity options=options}}
