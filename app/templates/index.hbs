@@ -26,7 +26,7 @@
 	{{#if search}}
 		<p>Here are the results for {{search}}</p>
 
-		{{#each search as |issues|}}
+		{{#each issues as |search|}}
 			<div class="one-third column">
 				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}Sample{{/link-to}}<br />
 				<strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />

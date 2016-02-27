@@ -4,9 +4,13 @@ a, .red { color: #cc0000;
 .pink { color: #FF69B4; }
 
 nav a { margin: 0 1em;
+		width: 4rem;
 		color: #FFF;
 		padding: .5rem 0;
 		text-align: center; }
+@media (max-width: 550px) {
+	nav a { margin: .5rem; }
+}
 .active { font-weight: 700; }
 .rightAligned { float: right; }
 
@@ -16,16 +20,16 @@ header, footer {
 	background-color: #352525;
 	color: #fff;
 }
-header {
-	height: 5rem;
-	margin-bottom: 2rem; }
-
+header { height: 5rem; }
+@media (max-width: 550px) {
+	header { height: 17rem; }
+}
 /*** fixing stupid alignments - might need to think of something better ***/
 header .column:first-child { margin-right: 0; }
-header nav a:first-child { margin-left: 0; }
 #dashboard .column:first-child { margin-right: 0; }
 
-.content { margin-bottom: 3rem; }
+.content {  margin-top: 3rem;
+			margin-bottom: 3rem; }
 
 footer img#logo {
 	max-height: 4.5rem;
@@ -61,7 +65,8 @@ header nav a::after {
 	transform: translateY(6px);
 }
 header nav a:hover::after,
-header nav a:focus::after {
+header nav a:focus::after,
+header nav a.active::after {
 	opacity: 1;
 	transform: translateY(0px);
 }
