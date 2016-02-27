@@ -4,7 +4,9 @@ a, .red { color: #cc0000;
 .pink { color: #FF69B4; }
 
 nav a { margin: 0 1em;
-		color: #FFF; }
+		color: #FFF;
+		padding: .5rem 0;
+		text-align: center; }
 .active { font-weight: 700; }
 .rightAligned { float: right; }
 
@@ -45,4 +47,21 @@ section { padding-top: 0.3rem; }
 	border: 1px solid #f9d100;
 	padding: 1rem;
 	border-radius: 4px;
+}
+header nav a:hover { text-decoration: none; }
+header nav a::after {
+	position: relative;
+	display: block;
+	top: 1.25rem;
+	height: 0.5rem;
+	background: #cc0000;
+	content: '';
+	opacity: 0;
+	transition: opacity 0.3s, transform 0.3s;
+	transform: translateY(6px);
+}
+header nav a:hover::after,
+header nav a:focus::after {
+	opacity: 1;
+	transform: translateY(0px);
 }
