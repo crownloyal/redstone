@@ -9,8 +9,12 @@ export default Ember.Controller.extend({
 	activity: Ember.computed('model', function() {
 		var issueActivity = Ember.A([['Date', 'Comments']]),
 			tempArray = [],
-			data = this.get('model');
+			data = this.get('model.journals');
 
-		return data;
+		for(var index in data) {
+			issueActivity.push(data);
+		}
+
+		return issueActivity;
 	})
 });
