@@ -2,7 +2,7 @@
 
 <section id="dashboard" class="row">
 	<div class="two-thirds column">
-		{{input type="search" value=search placeholder="Search..."}}
+		{{input type="search" value=search placeholder=" Search..."}}
 	</div>
 	<div class="one-third column">
 		<p class="note">
@@ -13,49 +13,17 @@
 
 <hr />
 
-{{!-- {{#filter-content placeholder="Filter search"
- content=issues properties="model.issue.id" as |fc|}}
-  <ul class="results">
-    {{#each fc.filteredContent as |issues|}}
-      <li>{{issues.id}} – {{issues.subject}}</li>
-    {{/each}}
-  </ul>
-{{/filter-content}} --}}
-
 <section>
-	{{#if search}}
-		<p>Here are the results for {{search}}</p>
-
-		{{#each issues as |search|}}
-			<div class="one-third column">
-				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}Sample{{/link-to}}<br />
-				<strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
-				<strong>Subject:</strong> {{issues.subject}}<br />
-				<strong>Last updated:</strong>
-				{{#if issues.updated_on}}
-					{{moment-from-now model.updated_on interval=1000}}
-				{{else}}
-					Error.
-				{{/if}}
-				</p>
-			</div>
-		{{/each}}
-
-	{{else}}
-		<p>Here is a full list of current issues</p>
-
 		<div class="row">
 			{{#each model.issues as |issues|}}
-				<div class="one-third column">
-				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}{{/link-to}}<br />
-				   <strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
-				   <!--strong>Subject:</strong> {{issues.subject}}<br /-->
-				   <strong>Last updated:</strong> {{moment-from-now issues.updated_on}}</p>
-				</div>
+				{{#link-to 'issues' issues}}
+					{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
+						{{issues.subject}}
+					{{/issue-detail-card}}
+				{{/link-to}}
 			{{else}}
 				<div class="one-half column"><p>Hang on a second...</p></div>
 			{{/each}}
 		</div>
-	{{/if}}
 
 </section>

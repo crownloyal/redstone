@@ -14,6 +14,9 @@ export default Ember.Controller.extend({
 		for(var journals in data) {
 			if(journals === 'journals'){
 					issueActivity.push(data[journals]);
+				for (var index in journals) {
+					issueActivity.push(index);
+				}
 			}
 		}
 

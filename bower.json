@@ -9,6 +9,8 @@
     "lodash": "~3.7.0",
     "Faker": "~3.0.0",
     "skeleton": "^2.0.4",
-    "normalize-strings": "normalize#^1.0.4"
+    "normalize-strings": "normalize#^1.0.4",
+    "font-awesome": "~4.5.0",
+    "sifter": "~0.4.3"
   }
 }

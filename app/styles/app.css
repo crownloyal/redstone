@@ -1,6 +1,7 @@
 /*** TYPO ***/
 a, .red { color: #cc0000;
 		  text-decoration: none; }
+a { transition: text-decoration 0.2s; }
 .pink { color: #FF69B4; }
 
 nav a { margin: 0 1em;
@@ -11,10 +12,11 @@ nav a { margin: 0 1em;
 @media (max-width: 550px) {
 	nav a { margin: .5rem; }
 }
+a .card { color: #222; }
 .active { font-weight: 700; }
 .rightAligned { float: right; }
 
-/*** LAYOUT ***/
+/*** HEADER ***/
 header, footer {
 	padding: 1rem;
 	background-color: #352525;
@@ -24,34 +26,7 @@ header { height: 5rem; }
 @media (max-width: 550px) {
 	header { height: 17rem; }
 }
-/*** fixing stupid alignments - might need to think of something better ***/
-header .column:first-child { margin-right: 0; }
-#dashboard .column:first-child { margin-right: 0; }
 
-.content {  margin-top: 3rem;
-			margin-bottom: 3rem; }
-
-footer img#logo {
-	max-height: 4.5rem;
-	max-width: 4.5rem;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-nav {
-	padding: 1rem 0;
-	height: 2rem; }
-
-section { padding-top: 0.3rem; }
-
-/*** Custom Styles ***/
-.note {
-	background-color: #ffffcc;
-	border: 1px solid #f9d100;
-	padding: 1rem;
-	border-radius: 4px;
-}
 header nav a:hover { text-decoration: none; }
 header nav a::after {
 	position: relative;
@@ -62,11 +37,76 @@ header nav a::after {
 	content: '';
 	opacity: 0;
 	transition: opacity 0.3s, transform 0.3s;
-	transform: translateY(6px);
+	transform: translateY(5px);
 }
 header nav a:hover::after,
-header nav a:focus::after,
 header nav a.active::after {
 	opacity: 1;
 	transform: translateY(0px);
+}
+
+/*** fixing stupid alignments - might need to think of something better ***/
+header .column:first-child { margin-right: 0; }
+#dashboard .column:first-child { margin-right: 0; }
+
+nav { padding: 1rem 0;
+	  height: 2rem; }
+
+/*** CONTENT AREA ***/
+
+.content {  margin-top: 3rem;
+			margin-bottom: 3rem; }
+section { padding-top: 0.3rem; }
+
+.card { border-radius: 4px;
+		border: 1px solid #D1D1D1;
+		padding: 1rem;
+		margin-bottom: 1rem;
+		min-height: 14rem;
+		transition: border 0.25s; }
+.card:hover { border: 1px solid #cc0000; }
+.card .card-prominent {
+	font-size: 1.6rem;
+	font-weight: 700;
+	text-align: center;
+	}
+.card .card-prominent::after {
+	content: '';
+	width: 30%;
+	left: 35%;
+	height: 1px;
+	position: relative;
+	display: block;
+	top: 1rem;
+	background: #D1D1D1;
+	transition: background 0.25s, width 0.25s, left 0.2s; }
+.card:hover .card-prominent::after {
+	background: #cc0000;
+	width: 50%;
+	left: 24%; }
+.card .card-project {
+	width: 100%;
+	text-align: center;
+	display: block;
+	margin-bottom: 2rem;
+}
+.card .card-ticket { float: left; }
+.card .card-updated { float: right; }
+
+/*** FOOTER ***/
+
+footer img#logo {
+	max-height: 4.5rem;
+	max-width: 4.5rem;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*** Custom Styles ***/
+.note {
+	background-color: #ffffcc;
+	border: 1px solid #f9d100;
+	padding: 1rem;
+	border-radius: 4px;
 }

@@ -1,0 +1,9 @@
+<div class="card one-third column">
+
+	<p class="card-prominent">{{yield}}</p>
+
+	<span class="card-project">{{fa-icon 'fa-code-fork'}} {{#link-to 'projects' projectid}}{{project}}{{/link-to}}</span>
+	<span class="card-ticket">{{fa-icon 'fa-ticket'}} {{id}}</span>
+	<span class="card-updated">{{fa-icon 'fa-clock-o'}} {{moment-from-now updated}}</span>
+
+</div>
