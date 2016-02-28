@@ -2,10 +2,10 @@
 
 <section id="dashboard" class="row">
 	<div class="two-thirds column">
-		{{input type="search" value=search placeholder=" Search..."}}
+		{{input type="search" value=search placeholder="Search..."}}
 	</div>
 	<div class="one-third column">
-		<p class="note">
+		<p class="note card">
 			The search allows you to look through issues and projects - ultimately enableling you too add multiple ones and to generate an activity graph.
 		</p>
 	</div>
@@ -15,15 +15,27 @@
 
 <section>
 		<div class="row">
-			{{#each model.issues as |issues|}}
-				{{#link-to 'issues' issues}}
-					{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
-						{{issues.subject}}
-					{{/issue-detail-card}}
-				{{/link-to}}
+			{{#if search}}
+				{{#each search as |issues|}}
+					{{#link-to 'issues' issues}}
+						{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
+							{{issues.subject}}
+						{{/issue-detail-card}}
+					{{/link-to}}
+				{{else}}
+					<div class="one-half column"><p>Hang on a second...</p></div>
+				{{/each}}
 			{{else}}
-				<div class="one-half column"><p>Hang on a second...</p></div>
-			{{/each}}
+				{{#each model.issues as |issues|}}
+					{{#link-to 'issues' issues}}
+						{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
+							{{issues.subject}}
+						{{/issue-detail-card}}
+					{{/link-to}}
+				{{else}}
+					<div class="one-half column"><p>Hang on a second...</p></div>
+				{{/each}}
+			{{/if}}
 		</div>
 
 </section>

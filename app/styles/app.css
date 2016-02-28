@@ -13,6 +13,7 @@ nav a { margin: 0 1em;
 	nav a { margin: .5rem; }
 }
 a .card { color: #222; }
+a .card .active { font-weight: 400; }
 .active { font-weight: 700; }
 .rightAligned { float: right; }
 
@@ -58,7 +59,7 @@ nav { padding: 1rem 0;
 			margin-bottom: 3rem; }
 section { padding-top: 0.3rem; }
 
-.card { border-radius: 4px;
+.card { border-radius: 2px;
 		border: 1px solid #D1D1D1;
 		padding: 1rem;
 		margin-bottom: 1rem;
@@ -83,7 +84,7 @@ section { padding-top: 0.3rem; }
 .card:hover .card-prominent::after {
 	background: #cc0000;
 	width: 50%;
-	left: 24%; }
+	left: 25%; }
 .card .card-project {
 	width: 100%;
 	text-align: center;
@@ -107,6 +108,4 @@ footer img#logo {
 .note {
 	background-color: #ffffcc;
 	border: 1px solid #f9d100;
-	padding: 1rem;
-	border-radius: 4px;
 }
