@@ -3,20 +3,23 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
 	setupController: Ember.computed(function(controller, model){
-		controller.set('model', model);
+		controller.set('content', model);
 	}),
 
-	activity: Ember.computed('model', function() {
+	activity: Ember.computed('content', function() {
 		var issueActivity = Ember.A([['Date', 'Comments']]),
 			tempArray = [],
-			data = this.get('model');
+			data = this.get('content');
 
 		for(var journals in data) {
 			if(journals === 'journals'){
-					issueActivity.push(data[journals]);
-				for (var index in journals) {
-					issueActivity.push(index);
-				}
+				issueActivity.push(Object.keys(journals).length);
+				// for(var index in journals){
+				// 	issueActivity.push(index);
+				// }
+			// 	for(var i = Object.keys(journals).length; i != 0; i--) {
+			// 		issueActivity.push(journals[i]);
+			// 	}
 			}
 		}
 

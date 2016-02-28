@@ -2,7 +2,13 @@
 
 <section id="dashboard" class="row">
 	<div class="two-thirds column">
-		{{input type="search" value=search placeholder="Search..."}}
+		{{hyper-search
+    		endpoint="issues.json"
+    		resultKey="issues.id"
+    		placeholder="Search by issues"
+    		handleResults=(action "handleResults")
+		}}
+
 	</div>
 	<div class="one-third column">
 		<p class="note card">
@@ -13,29 +19,25 @@
 
 <hr />
 
+{{#each-in searchResults as |key value|}}
+
+	looking at {{key}}
+	{{#each issues as |issues|}}
+		{{issues}}
+	{{/each}}
+{{/each-in}}
+
 <section>
 		<div class="row">
-			{{#if search}}
-				{{#each search as |issues|}}
-					{{#link-to 'issues' issues}}
-						{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
-							{{issues.subject}}
-						{{/issue-detail-card}}
-					{{/link-to}}
-				{{else}}
-					<div class="one-half column"><p>Hang on a second...</p></div>
-				{{/each}}
+			{{#each model.issues as |issues|}}
+				{{#link-to 'issues' issues}}
+					{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
+						{{issues.subject}}
+					{{/issue-detail-card}}
+				{{/link-to}}
 			{{else}}
-				{{#each model.issues as |issues|}}
-					{{#link-to 'issues' issues}}
-						{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
-							{{issues.subject}}
-						{{/issue-detail-card}}
-					{{/link-to}}
-				{{else}}
-					<div class="one-half column"><p>Hang on a second...</p></div>
-				{{/each}}
-			{{/if}}
+				<div class="one-half column"><p>Hang on a second...</p></div>
+			{{/each}}
 		</div>
 
 </section>

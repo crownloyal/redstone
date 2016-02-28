@@ -1,10 +1,14 @@
 <h3>Project {{model.name}}</h3>
 
-<p><strong>Project #</strong> {{model.id}}<br />
-
+<p>
+<strong>Project #</strong> {{model.id}}<br />
+{{#if model.parent}}
+<strong>Parent Project</strong> {{#link-to 'projects' model.parent.id}}{{model.parent.name}}{{/link-to}}
+{{/if}}
+</p>
 <hr />
 
-<strong>Issues in this project:</strong></p>
+<p><strong>Issues in this project:</strong></p>
 
 	{{#each model.issues as |issues|}}
 		{{#link-to 'issues' issues}}
@@ -14,4 +18,8 @@
 			{{/link-to}}
 	{{else}}
 		<p>There are no issues in this project</p>
+	{{/each}}
+
+	{{#each model as |projects|}}
+		{{model.parent.name}}
 	{{/each}}
