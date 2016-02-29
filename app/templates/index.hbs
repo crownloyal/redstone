@@ -4,7 +4,7 @@
 	<div class="two-thirds column">
 		{{hyper-search
     		endpoint="issues.json"
-    		resultKey="issues.id"
+    		resultKey="issues"
     		placeholder="Search by issues"
     		handleResults=(action "handleResults")
 		}}
@@ -20,12 +20,13 @@
 <hr />
 
 {{#each-in searchResults as |key value|}}
-
-	looking at {{key}}
-	{{#each issues as |issues|}}
-		{{issues}}
+	looking at {{key}} - {{value}}<br />
+	{{#each key as |issues property|}}
+		{{property}}
 	{{/each}}
+	<br />
 {{/each-in}}
+
 
 <section>
 		<div class="row">

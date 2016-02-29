@@ -64,7 +64,8 @@ section { padding-top: 0.3rem; }
 		padding: 1rem;
 		margin-bottom: 1rem;
 		min-height: 14rem;
-		transition: border 0.25s; }
+		transition: border 0.25s;
+		overflow: hidden; }
 .card:hover { border: 1px solid #cc0000; }
 .card .card-prominent {
 	font-size: 1.6rem;
