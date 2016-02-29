@@ -22,5 +22,9 @@ export default DS.Model.extend({
 	start_date: DS.attr(),
 
   //RELATIONSHIPS
-  	project: DS.belongsTo('project')
+  	project: DS.belongsTo('project'),
+
+  //CUSTOM FIELDS
+  	custom_fields: DS.attr()
+
 });

@@ -3,6 +3,7 @@ import DS from 'ember-data';
 export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	attrs: {
 		project: { embedded: 'always' },
-		journals: { embedded: 'always' }
+		journals: { embedded: 'always' },
+		custom_fields: {embedded: 'always'}
 	}
 });
