@@ -2,12 +2,7 @@
 
 <section id="dashboard" class="row">
 	<div class="two-thirds column">
-		{{hyper-search
-    		endpoint="issues.json"
-    		resultKey="issues"
-    		placeholder="Search by issues"
-    		handleResults=(action "handleResults")
-		}}
+		{{search-box value=search}}
 
 	</div>
 	<div class="one-third column">
@@ -19,16 +14,21 @@
 
 <hr />
 
-{{#each-in searchResults as |key value|}}
-	looking at {{key}} - {{value}}<br />
-	{{#each key as |issues property|}}
-		{{property}}
-	{{/each}}
-	<br />
-{{/each-in}}
+	{{#if search}}
+	<p>Here are the results for <strong>{{search}}</strong></p>
+	{{else}}
+	<p>This is happening right now:</p>
+	{{/if}}
 
+    	{{#each queryResults as |result index|}}
+    	{{#link-to 'issues' result}}
+            {{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
+						{{result.subject}}
+			{{/issue-detail-card}}
+		{{/link-to}}
+    	{{/each}}
 
-<section>
+{{!-- <section>
 		<div class="row">
 			{{#each model.issues as |issues|}}
 				{{#link-to 'issues' issues}}
@@ -41,4 +41,5 @@
 			{{/each}}
 		</div>
 
-</section>
+</section> --}}
+

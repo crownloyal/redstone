@@ -59,6 +59,8 @@ nav { padding: 1rem 0;
 			margin-bottom: 3rem; }
 section { padding-top: 0.3rem; }
 
+input { transition: border 0.3s; }
+
 .card { border-radius: 2px;
 		border: 1px solid #D1D1D1;
 		padding: 1rem;
