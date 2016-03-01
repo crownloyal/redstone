@@ -9,9 +9,7 @@ nav a { margin: 0 1em;
 		color: #FFF;
 		padding: .5rem 0;
 		text-align: center; }
-@media (max-width: 550px) {
-	nav a { margin: .5rem; }
-}
+@media (max-width: 550px) { nav a { margin: .5rem; } }
 a .card { color: #222; }
 a .card .active { font-weight: 400; }
 .active { font-weight: 700; }
@@ -21,13 +19,9 @@ a .card .active { font-weight: 400; }
 header, footer {
 	padding: 1rem;
 	background-color: #352525;
-	color: #fff;
-}
+	color: #fff; }
 header { height: 5rem; }
-@media (max-width: 550px) {
-	header { height: 17rem; }
-}
-
+@media (max-width: 550px) { header { height: 17rem; } }
 header nav a:hover { text-decoration: none; }
 header nav a::after {
 	position: relative;
@@ -38,31 +32,79 @@ header nav a::after {
 	content: '';
 	opacity: 0;
 	transition: opacity 0.3s, transform 0.3s;
-	transform: translateY(5px);
-}
+	transform: translateY(5px); }
 header nav a:hover::after,
 header nav a.active::after {
 	opacity: 1;
-	transform: translateY(0px);
-}
-
-/*** fixing stupid alignments - might need to think of something better ***/
-header .column:first-child { margin-right: 0; }
-#dashboard .column:first-child { margin-right: 0; }
+	transform: translateY(0px); }
+header .column:first-child { margin-right: 0; }		/*** fixing stupid alignments - ***/
+#dashboard .column:first-child { margin-right: 0; } /*** might need to think of something better ***/
 
 nav { padding: 1rem 0;
 	  height: 2rem; }
 
 /*** CONTENT AREA ***/
-
 .content {  margin-top: 3rem;
 			margin-bottom: 3rem; }
 section { padding-top: 0.3rem; }
 
 input { transition: border 0.3s; }
+.search #search-box {
+	display: block;
+	transition: background-color 0.3s, border-color 0.3s; }
+.search .inputLabel {
+	color: #d1d1d1;
+	display: block;
+	float: left;
+	color: #d1d1d1;
+	user-select: none;
+	text-align: left;
+	position: relative;
+	pointer-events: none;
+	overflow: hidden;
+	padding: 0 1rem;
+	transform: translate3d(0, -3em, 0);
+	transition: transform 0.3s;
+
+	top: -0.5rem;
+
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+ }
+.search .labelContent {
+	position: relative;
+	display: block;
+	padding: 1rem 0;
+	color: #8B8C8B;
+	padding: 0.25em 0;
+	transition: transform 0.3s; }
+.search .labelContent::after {
+	content: attr(data-content);
+	position: absolute;
+	font-weight: 700;
+	bottom: 100%;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: #cc0000;
+	padding: 0.25em 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 0.85em; }
+.search #search-box:focus + .search .inputLabel,
+.input--filled .inputLabel { transform: translate3d(0, 0, 0); }
+.search #search-box:focus + .search .inputLabel .labelContent,
+.input--filled .labelContent { transform: translate3d(0, 100%, 0); }
+.search #search-box:focus + .search #search-box,
+.search .input--filled #search-box { border-color: #cc0000; }
 
 .card { border-radius: 2px;
-		border: 1px solid #D1D1D1;
+		border: 1px solid #d1d1d1;
 		padding: 1rem;
 		margin-bottom: 1rem;
 		min-height: 14rem;
@@ -72,8 +114,7 @@ input { transition: border 0.3s; }
 .card .card-prominent {
 	font-size: 1.6rem;
 	font-weight: 700;
-	text-align: center;
-	}
+	text-align: center; }
 .card .card-prominent::after {
 	content: '';
 	width: 30%;
@@ -82,7 +123,7 @@ input { transition: border 0.3s; }
 	position: relative;
 	display: block;
 	top: 1rem;
-	background: #D1D1D1;
+	background: #d1d1d1;
 	transition: background 0.25s, width 0.25s, left 0.2s; }
 .card:hover .card-prominent::after {
 	background: #cc0000;
@@ -92,8 +133,7 @@ input { transition: border 0.3s; }
 	width: 100%;
 	text-align: center;
 	display: block;
-	margin-bottom: 2rem;
-}
+	margin-bottom: 2rem; }
 .card .card-ticket { float: left; }
 .card .card-updated { float: right; }
 

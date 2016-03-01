@@ -1,8 +1,11 @@
 <h4>Dashboard</h4>
 
 <section id="dashboard" class="row">
-	<div class="two-thirds column">
-		{{search-box value=search}}
+	<div class="two-thirds column search {{if isFocused 'input--filled' ''}}">
+		{{search-box value=search id="search-box" focus-in="focused"}}
+		<label class="inputLabel" for="search-box" >
+			<span class="labelContent" data-content="Search">Search</span>
+		</label>
 	</div>
 	<div class="one-third column">
 		<p class="note card">
@@ -13,6 +16,7 @@
 
 <hr />
 
+<section>
 	{{#if search}}
 	<p>Here are the results for <strong>{{search}}</strong></p>
 	{{else}}
@@ -26,3 +30,4 @@
 		{{/issue-detail-card}}
 		{{/link-to}}
     {{/each}}
+</section>

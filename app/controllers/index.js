@@ -12,4 +12,10 @@ export default Ember.Controller.extend({
   	queryParams: ['search'],
   	queryResults: computedFilterByQuery('results', ['id', 'project.name', 'status.name', 'author.name', 'subject'], 'search').readOnly(),
 
+  	isFocused: false,
+  	actions:{
+    	focused(){
+      		this.toggleProperty('isFocused');
+    	}
+	}
 });
