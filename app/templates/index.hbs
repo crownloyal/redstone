@@ -3,7 +3,6 @@
 <section id="dashboard" class="row">
 	<div class="two-thirds column">
 		{{search-box value=search}}
-
 	</div>
 	<div class="one-third column">
 		<p class="note card">
@@ -22,24 +21,8 @@
 
     	{{#each queryResults as |result index|}}
     	{{#link-to 'issues' result}}
-            {{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
-						{{result.subject}}
-			{{/issue-detail-card}}
+        	{{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
+				{{result.subject}}
+		{{/issue-detail-card}}
 		{{/link-to}}
-    	{{/each}}
-
-{{!-- <section>
-		<div class="row">
-			{{#each model.issues as |issues|}}
-				{{#link-to 'issues' issues}}
-					{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
-						{{issues.subject}}
-					{{/issue-detail-card}}
-				{{/link-to}}
-			{{else}}
-				<div class="one-half column"><p>Hang on a second...</p></div>
-			{{/each}}
-		</div>
-
-</section> --}}
-
+    {{/each}}
