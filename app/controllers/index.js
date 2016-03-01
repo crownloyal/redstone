@@ -15,7 +15,17 @@ export default Ember.Controller.extend({
   	isFocused: false,
   	actions:{
     	focused(){
-      		this.toggleProperty('isFocused');
+      		this.set('isFocused', true);
+    	},
+    	checkFocused(){
+    		var element = '#search-box',
+    			qElement = jQuery(element);
+    		if(qElement.val() === '' || query.length < 1){
+    		    this.set('isFocused', false);
+    		} else {
+    			this.set('isFocused', true);
+    		}
+    		console.log(qElement.val());
     	}
 	}
 });

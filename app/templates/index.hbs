@@ -2,7 +2,7 @@
 
 <section id="dashboard" class="row">
 	<div class="two-thirds column search {{if isFocused 'input--filled' ''}}">
-		{{search-box value=search id="search-box" focus-in="focused"}}
+		{{search-box value=search id="search-box" focus-in="focused" focus-out="checkFocused"}}
 		<label class="inputLabel" for="search-box" >
 			<span class="labelContent" data-content="Search">Search</span>
 		</label>
