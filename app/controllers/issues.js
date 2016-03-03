@@ -2,23 +2,24 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-	activity: Ember.computed(function() {
+	data: function() { return this.get('model'); }.property('model'),
+	activity: Ember.computed('data', function() {
 		var issueActivity = Ember.A([['Date', 'Comments']]),
 			tempArray = [],
-			data = this.get('model');
+			modelObj = this.get('data'),
+			journals = modelObj.get('journals'),
+			status = modelObj.get('status'); //fancy obj chain (model.issues.journals.ids)
 
-		for(var journals in data) {
-			// if(journals === 'journals'){
-			// 	issueActivity.push(Object.keys(journals).length);
-			// 	for(var index in journals){
-			// 		issueActivity.push(index);
-			// 	}
-			// 	for(var i = Object.keys(journals).length; i !== 0; i--) {
-			// 		issueActivity.push(journals[i]);
-			// 	}
-			// }
+			issueActivity.push(status);
+			issueActivity.push(journals);
+
+		for(var index in journals) {
+			issueActivity.push(index);
+			for(var journal = 0; journal.length === index.length; journal++){
+				tempArray.push(index[journal]); // get data from inherited array
+				issueActivity.push(tempArray);
+			}
 		}
-		// console.log(data);
 		return issueActivity;
 	})
 });
