@@ -9,8 +9,6 @@ export default DS.Model.extend({
 	created_on: DS.attr(),
 	updated_on: DS.attr(),
 
-  	journals: DS.attr(),
-
   //TIER II
 	author: DS.attr(),
 	category: DS.attr(),
@@ -23,6 +21,7 @@ export default DS.Model.extend({
 
   //RELATIONSHIPS
   	project: DS.belongsTo('project'),
+  	journals: DS.hasMany('journal'),
 
   //CUSTOM FIELDS
   	custom_fields: DS.attr()

@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
 			journals = modelObj.get('journals'),
 			status = modelObj.get('status'); //fancy obj chain (model.issues.journals.ids)
 
-			issueActivity.push(status);
+			issueActivity.push(status.id);
 			issueActivity.push(journals);
 
 		for(var index in journals) {
