@@ -11,6 +11,7 @@
     "skeleton": "^2.0.4",
     "normalize-strings": "normalize#^1.0.4",
     "font-awesome": "~4.5.0",
-    "sifter": "~0.4.3"
+    "sifter": "~0.4.3",
+    "imagesloaded": "^4.1.0"
   }
 }

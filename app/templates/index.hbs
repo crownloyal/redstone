@@ -23,11 +23,13 @@
 	<p>This is happening right now:</p>
 	{{/if}}
 
-    	{{#each queryResults as |result index|}}
+	<div class="masonry">
+    {{#each queryResults as |result index|}}
     	{{#link-to 'issues' result}}
         	{{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
 				{{result.subject}}
 		{{/issue-detail-card}}
 		{{/link-to}}
     {{/each}}
+    </div>
 </section>

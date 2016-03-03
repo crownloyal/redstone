@@ -44,6 +44,7 @@ nav { padding: 1rem 0;
 	  height: 2rem; }
 
 /*** CONTENT AREA ***/
+/* SEARCH ANIMATION */
 .content {  margin-top: 3rem;
 			margin-bottom: 3rem; }
 section { padding-top: 0.3rem; }
@@ -65,9 +66,7 @@ input { transition: border 0.3s; }
 	padding: 0 1rem;
 	transform: translate3d(0, -3em, 0);
 	transition: transform 0.3s;
-
 	top: -0.5rem;
-
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 	-webkit-touch-callout: none;
@@ -79,7 +78,7 @@ input { transition: border 0.3s; }
 .search .labelContent {
 	position: relative;
 	display: block;
-	padding: 1rem 0;
+	padding: 1em 0;
 	color: #8B8C8B;
 	padding: 0.25em 0;
 	transition: transform 0.3s; }
@@ -92,7 +91,7 @@ input { transition: border 0.3s; }
 	height: 100%;
 	width: 100%;
 	color: #cc0000;
-	padding: 0.25em 0;
+	padding: 0.25rem 0;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 0.85em; }
@@ -103,13 +102,35 @@ input { transition: border 0.3s; }
 .search #search-box:focus + .search #search-box,
 .search .input--filled #search-box { border-color: #cc0000; }
 
+/* CARD GRID */
+.masonry {
+	width: 100%;
+	display: block;
+	column-count: 3;
+	-webkit-column-count: 3;
+	column-gap: 1rem;
+	-webkit-column-gap: 1rem;
+	transition: column-count 0.2s, -webkit-column-count 0.2s; }
+@media (max-width: 800px) {
+	.masonry {
+		column-count: 2;
+		-webkit-column-count: 2; }
+}
+@media (max-width: 550px) {
+	.masonry {
+		column-count: 1;
+		-webkit-column-count: 1; }
+}
 .card { border-radius: 2px;
 		border: 1px solid #d1d1d1;
 		padding: 1rem;
 		margin-bottom: 1rem;
 		min-height: 14rem;
 		transition: border 0.25s;
-		overflow: hidden; }
+		overflow: hidden;
+    	display: inline-block;
+    	width: 90%;
+		 }
 a .card:hover { border: 1px solid #cc0000; }
 .card .card-prominent {
 	font-size: 1.6rem;

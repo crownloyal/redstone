@@ -10,16 +10,18 @@
 
 <p><strong>Issues in this project:</strong></p>
 
-	{{#each model.issues as |issues|}}
-		{{#link-to 'issues' issues}}
-					{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
-						{{issues.subject}}
-					{{/issue-detail-card}}
-			{{/link-to}}
-	{{else}}
-		<p>There are no issues in this project</p>
-	{{/each}}
+	<div class="masonry">
+		{{#each model.issues as |issues|}}
+			{{#link-to 'issues' issues}}
+						{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
+							{{issues.subject}}
+						{{/issue-detail-card}}
+				{{/link-to}}
+		{{else}}
+			<p>There are no issues in this project</p>
+		{{/each}}
 
-	{{#each model as |projects|}}
-		{{model.parent.name}}
-	{{/each}}
+		{{#each model as |projects|}}
+			{{model.parent.name}}
+		{{/each}}
+	</div>
