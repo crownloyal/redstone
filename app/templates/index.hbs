@@ -25,7 +25,7 @@
 
 	<div class="masonry">
     {{#each queryResults as |result index|}}
-    	{{#link-to 'issues' result}}
+    	{{#link-to 'issues' result.id}}
         	{{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
 				{{result.subject}}
 		{{/issue-detail-card}}
