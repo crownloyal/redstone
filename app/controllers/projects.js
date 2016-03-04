@@ -11,8 +11,8 @@ export default Ember.Controller.extend({
 
 		tempArray.push(issueList.length);
 
-		for(var i = issueList.length; i === 0; i--) {
-			tempArray.push(issueList[i].id);
+		for(var i in issueList) {
+			tempArray.push(issueList.id);
 		}
 
 		//merge them all into the result array
