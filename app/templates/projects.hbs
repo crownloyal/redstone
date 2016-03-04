@@ -6,6 +6,18 @@
 <strong>Parent Project</strong> {{#link-to 'projects' model.parent.id}}{{model.parent.name}}{{/link-to}}
 {{/if}}
 </p>
+
+<hr />
+
+<p>Activity</p>
+
+{{#each model.issues as |issues|}}
+	{{moment-format issues.created_on 'LLL'}} -- {{issues.status.name}} -- {{moment-format issues.updated_on 'LLL'}}<br />
+{{/each}}
+
+{{projectActivity}}
+{{area-chart data=projectActivity options=options}}
+
 <hr />
 
 <p><strong>Issues in this project:</strong></p>
