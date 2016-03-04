@@ -14,7 +14,6 @@ export default DS.Model.extend({
 	category: DS.attr(),
 	assigned_to: DS.attr(),
 	priority: DS.attr(),
-  	journals: DS.attr(),
 
   //TIER III
   	tracker: DS.attr(),
@@ -22,6 +21,7 @@ export default DS.Model.extend({
 
   //RELATIONSHIPS
   	project: DS.belongsTo('project'),
+  	journals: DS.hasMany('journal'),
 
   //CUSTOM FIELDS
   	custom_fields: DS.attr()
