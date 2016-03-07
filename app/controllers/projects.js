@@ -1,24 +1,26 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	data: function() { return this.get('model'); }.property('model'),
-	projectActivity: Ember.computed('data', function() {
-		var fullModel = this.get('data'),
-			issueList = fullModel.get('issues.content.currentState'),
-			baseArray = Ember.A(['Date', 'Opened']),
-			tempArray = [],
-			result = [];
+	// data: function() { return this.get('model'); }.property('model'),
+	projectActivity: Ember.computed('model', function() {
+		var label = ['Date', 'New', 'Closed'],
+			startDate = this.get('model.issues').mapBy('created_on'),
+			updateDate = this.get('model.issues').mapBy('updated_on');
 
-		tempArray.push(issueList.length);
+		return [
+			label ,
+			startDate,
+		];
+	}),
+	options: {
+	    title: 'Project activity over the past week',
+	    // height: 300,
+	    // width: 400,
 
-		for(var i in issueList) {
-			tempArray.push(issueList.id);
-		}
+	    animation: {
+	      startup: true,
+	      easing: 'inAndOut',
+	    },
+  },
 
-		//merge them all into the result array
-		result.push(baseArray);
-		result.push(tempArray);
-
-		return result;
-	})
 });
