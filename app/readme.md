@@ -3,8 +3,18 @@ Ember Redstone Project
 
 ### Story and idea of this Project ###
 
+### What is Ember.js? ###
+
+
+### Where does the data come from? ###
+The data is coming from the only source of truth - the production REDMINE database itself. It exposes a REST API which we can use to get *live* data, yes you are seeing this right, the data is live.
 
 ### Changelog ###
+
+##### March 07 2016 #####
+_EOD commit : 2a0a1c9_
+- added readme.md
+- figured model enumerables to parse through model data
 
 ##### March 04 2016 #####
 _EOD commit : dffcdcf_

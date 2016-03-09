@@ -2,6 +2,7 @@ import Ember from 'ember';
 import computedFilterByQuery from 'ember-cli-filter-by-query';
 
 export default Ember.Controller.extend({
+  session: Ember.inject.service('session'),
 	results: function() { return this.get('model'); }.property('model'),
 	search: '',
   	queryParams: ['search'],

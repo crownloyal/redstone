@@ -131,7 +131,7 @@ input { transition: border 0.3s; }
 		margin-bottom: 1rem;
 		min-height: 14rem;
 		transition: border 0.25s;
-		overflow: hidden;
+		/* overflow: hidden; Sacrificing over-flowing text items for pretty hover animations*/
     	display: inline-block;
     	width: 90%;
 		 }
