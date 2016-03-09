@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
 			updateDates = this.get('model.issues').mapBy('updated_on');
 
 		var today = function() { return moment(); }(),
-			countdown = function(timegap) {
+			countdown = function(daySelect) {
 				var tempArray = [];
 				for(var i = 7; i != 0; i--){
 					tempArray.push(moment().subtract(i, 'days'));

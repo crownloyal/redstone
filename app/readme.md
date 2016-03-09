@@ -11,6 +11,14 @@ The data is coming from the only source of truth - the production REDMINE databa
 
 ### Changelog ###
 
+##### March 08 2016 #####
+_EOD commit : 1c3072f_
+- added ember-simple-auth to manage user authentication
+- injecting session into application controller
+- added jsonp callback to adapter
+- using moments to render date array
+- sacrificed card text overflow for pretty animations
+
 ##### March 07 2016 #####
 _EOD commit : 2a0a1c9_
 - added readme.md
@@ -24,7 +32,7 @@ _EOD commit : dffcdcf_
 - introduced bug as I am looking for nested properties with @each to get my journals [test only pass as 55/61]
 - started implementing project graph
 
-##### March 02 2016 #####
+##### March 03 2016 #####
 _EOD commit : 4df0e4f_
 - fixed dependencies
 - fixed controller model setups

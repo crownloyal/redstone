@@ -11,6 +11,12 @@
 
 <p>Activity</p>
 
+{{#x-select value=7 action="daySelect"}}
+	{{#x-option value=7}}07{{/x-option}}
+	{{#x-option value=14}}14{{/x-option}}
+	{{#x-option value=30}}30{{/x-option}}
+{{/x-select}}
+
 {{#each model.issues as |issues|}}
 	{{moment-format issues.created_on 'LLL'}} -- {{issues.status.name}} -- {{moment-format issues.updated_on 'LLL'}}<br />
 {{/each}}
