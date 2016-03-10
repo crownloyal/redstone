@@ -9,24 +9,24 @@
 
 <hr />
 
-<p>Activity</p>
+<h5>Activity</h5>
 
-{{#x-select value=7 action="daySelect"}}
-	{{#x-option value=7}}07{{/x-option}}
-	{{#x-option value=14}}14{{/x-option}}
-	{{#x-option value=30}}30{{/x-option}}
-{{/x-select}}
-
-{{#each model.issues as |issues|}}
-	{{moment-format issues.created_on 'LLL'}} -- {{issues.status.name}} -- {{moment-format issues.updated_on 'LLL'}}<br />
-{{/each}}
-
+<p>
+	Check activity over the past
+	<select {{action 'change' on='change'}}>
+    	<option>7</option>
+    	<option>14</option>
+    	<option>30</option>
+	</select> days.
+</p>
+{{daySelect}}
 {{projectActivity}}
 {{area-chart data=projectActivity options=options}}
+<p><strong>Debug mode enabled</strong></p>
 
 <hr />
 
-<p><strong>Issues in this project:</strong></p>
+<p><strong class="red">Issues in this project:</strong></p>
 
 	<div class="masonry">
 		{{#each model.issues as |issues|}}

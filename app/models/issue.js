@@ -4,10 +4,10 @@ export default DS.Model.extend({
   //ISSUE META TIER I
   	//ID is parsed automatically
 	status: DS.attr(),
-	subject: DS.attr(),
-	description: DS.attr(),
-	created_on: DS.attr(),
-	updated_on: DS.attr(),
+	subject: DS.attr('string'),
+	description: DS.attr('string'),
+	created_on: DS.attr('date'),
+	updated_on: DS.attr('date'),
 
   //TIER II
 	author: DS.attr(),
@@ -17,7 +17,7 @@ export default DS.Model.extend({
 
   //TIER III
   	tracker: DS.attr(),
-	start_date: DS.attr(),
+	start_date: DS.attr('date'),
 
   //RELATIONSHIPS
   	project: DS.belongsTo('project'),

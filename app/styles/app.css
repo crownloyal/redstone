@@ -1,6 +1,6 @@
 /*** TYPO ***/
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body { font-family: 'Open Sans', sans-serif; }
@@ -174,7 +174,6 @@ a .card:hover { border: 1px solid #cc0000; }
 .card .card-updated { float: right; }
 
 /*** FOOTER ***/
-
 footer img#logo {
 	max-height: 4.5rem;
 	max-width: 4.5rem;

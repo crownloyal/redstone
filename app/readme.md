@@ -4,12 +4,26 @@ Ember Redstone Project
 ### Story and idea of this Project ###
 
 ### What is Ember.js? ###
+Ember.js or simply Ember is a Javascript MVC framework, delivering a "Convention over configuration" approach for what they call "ambitious web apps".
 
+Sure when you start up a new app, you need to consider a few things; basically you need to architect from the ground up - how do you manage your models, how will the data routing work out? Lot's of questions!
+Ember jumps in right here and already solves you all those problems people have seen already hundereds of times. Instead it gives you certain patterns which, once learned, turn out to be powerful so you can focus on what your app needs to deliver.
+
+If you want to read an ingenious sales pitch - have a look on [http://brewhouse.io/blog/2015/05/13/emberjs-an-antidote-to-your-hype-fatigue.html"](Brewhouse's blog) which gives you an in-depth look into the problems we face on a day-to-day basis as a Javascript engineer.
 
 ### Where does the data come from? ###
 The data is coming from the only source of truth - the production REDMINE database itself. It exposes a REST API which we can use to get *live* data, yes you are seeing this right, the data is live.
 
 ### Changelog ###
+
+##### March 09 2016 #####
+_EOD commit : _
+- added embers-select for dropdown selections
+- added drop-downs to projects
+- updated read
+- updated about with current changelog
+- fiddled around with the day array calculator
+- added custom fonts
 
 ##### March 08 2016 #####
 _EOD commit : 1c3072f_
