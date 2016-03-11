@@ -11,28 +11,29 @@ export default Ember.Controller.extend({
 		var today = function() { return moment().format("DD MM"); }(),
 			countdown = function() {
 
-				for(var i = 14; i !== 0; i--){
+				for(var i = 14+1; i > 0; i--){
 					var changingDay = moment().subtract(i, 'days').format("DD MMM"), 					//substract the number of days
 																										//and make a nice list
 						testingVAR = [],
 						addedToday = function() {
 							var newTickets = 0;
-							for(var j = 0; j !== startDates.length; j++){									//try for as many times as we have tickets
+							for(var j = 0; j < startDates.length; j++){									//try for as many times as we have tickets
 								if(moment(startDates[j].toString()).isSame(changingDay, 'day')) {					//if ticket date matches this loops's date
 									newTickets++;														//count++ for 'new tickets' count
 							}
-							testingVAR.push(moment(startDates[j].toString()).isSame(changingDay, 'day'));
+							testingVAR.push(j);
 							return newTickets;
 						}
 					};
 
-					label.push([changingDay.toString(), addedToday()]); 									//merging the label & creating the multi array
+					label.push([changingDay.toString(), addedToday()], testingVAR); 									//merging the label & creating the multi array
 					}
 				return label;
 				};
 
 		return countdown();
 	}),
+	graphDays: 7,
 	options: {
 	    title: 'Project activity over the past week',
 	    // height: 300,

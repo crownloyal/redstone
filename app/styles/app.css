@@ -59,6 +59,7 @@ nav { padding: 1rem 0;
 .content {  margin-top: 3rem;
 			margin-bottom: 3rem; }
 section { padding-top: 0.3rem; }
+input#datepicker { width: 6rem; }
 
 input { transition: border 0.3s; }
 .search #search-box {

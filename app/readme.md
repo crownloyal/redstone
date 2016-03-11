@@ -3,7 +3,22 @@ Ember Redstone Project
 
 ### Story and idea of this Project ###
 
+_Once upon a time..._
+
+Redstone provides real-time analytical models for Mozy Redmine activity. Based on Redmine's current reporting and analysis capabilities stakeholders can not *easily* track activity patterns and based on external variables.
+
+Therefore we developed a user-facing web app which pulls Redmine's data and manages it by dates. You are able to look for certain tags and combine them to create custom graphs.
+
+### Workflow ###
+
+Use the dashboard to search for projects, error messages, subjects or ticket numbers.
+
+The tickets matching your search query will influence the dashboard graph. Select save to push the found information into the store and combine your current findings with other queries.
+
+The authentication is needed so we can store your favourite queries on the server side.
+
 ### What is Ember.js? ###
+
 Ember.js or simply Ember is a Javascript MVC framework, delivering a "Convention over configuration" approach for what they call "ambitious web apps".
 
 Sure when you start up a new app, you need to consider a few things; basically you need to architect from the ground up - how do you manage your models, how will the data routing work out? Lot's of questions!
@@ -16,8 +31,18 @@ The data is coming from the only source of truth - the production REDMINE databa
 
 ### Changelog ###
 
+
+##### March 10 2016 #####
+_EOD commit : c302fb7_
+- deprecated embers-select; reverted to native HTML
+- changed graph to only hold ticket_start information for now
+- updated mirage
+- models are now slightly more explicit
+- increased Google font loading times
+- about actually talks about itself now
+
 ##### March 09 2016 #####
-_EOD commit : _
+_EOD commit : 3323081_
 - added embers-select for dropdown selections
 - added drop-downs to projects
 - updated read
