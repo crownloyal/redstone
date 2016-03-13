@@ -4,36 +4,41 @@ import moment from 'moment';
 export default Ember.Controller.extend({
 	// data: function() { return this.get('model'); }.property('model'),
 	projectActivity: Ember.computed('model', function() {
-		var label = [['Date', 'New']],
+		var label = ['Date', 'New'],
 			startDates = this.get('model.issues').mapBy('created_on'),
-			updateDates = this.get('model.issues').mapBy('updated_on');
+			updateDates = this.get('model.issues').mapBy('updated_on'),
+			result = [],
 
-		var today = function() { return moment().format("DD MM"); }(),								//today's date!
-			getSpecificDatefromArray = function(dateArray, index) { return dateArray[index]; }(),	//grab a date from the array
 			compareDates = function(date, anotherDate) {
-				return moment(date.toString()).isSame(anotherDate, 'day');							//compare those 2 dates - returns bool
-			}(),
+				return moment(date).isSame(anotherDate, 'day');										//compare 2 dates - returns bool
+			},
 
-			multiArrayCreator = function() {																//function which creates multi-array
-				for(var i = 14+1; i > 0; i--){															//How many days do we need?
-					var changingDay = moment().subtract(i, 'days').format("DD MMM"); 					//substract the number of days
-																										//and make a nice list
-					label.push([changingDay.toString(), addedToday(changingDay)]); 					//merging the label & creating the multi array
-					}
-				return label;
-				},
+			pushDates = function(count) {															//get all those dates into a nice array
+				for (var i = (count); i >= 0; i--) {												//needs to be run first
+					var changingDay = moment().subtract(i, 'days').format("DD MMM");
 
-			addedToday = function(changingDay) {
-				var newTickets = 0;
-				for(var dateComparer = 0; dateComparer < startDates.length; dateComparer++){									//try for as many times as we have tickets
-					if(compareDates()) {																//if ticket date matches this loops's date
-						newTickets++;																	//count++ for 'new tickets' count
+					result.push([changingDay, ]);
+				}
+			},
+			pushTicketCount = function(preArray, array, target) {
+				var counter = 0;
+				for (var j = 0; j < preArray.length; j++) {
+					for(var k = 0; k < array.length; k++) {
+						if ( compareDates(array[k], preArray[j]) ) {
+						counter++;
+						}
 					}
-				return newTickets;
+				result[j][target] = counter;
 				}
 			};
 
-		return countdown();
+		//actually doing things
+
+		pushDates(14);
+		pushTicketCount(result, startDates, 1);
+
+		result.unshift(label);		//add labels at the start
+		return result;
 	}),
 	graphDays: 7,
 	options: {
@@ -47,7 +52,7 @@ export default Ember.Controller.extend({
 	    }
 	},
   	actions: {
-  		daySelector(){ this.set(this.graphDays, selected); },
+  		// daySelector(){ this.set(this.graphDays, selected); },
   	}
 
 });

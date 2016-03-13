@@ -1,4 +1,4 @@
-Ember Redstone Project
+
 ======================
 
 ### Story and idea of this Project ###
