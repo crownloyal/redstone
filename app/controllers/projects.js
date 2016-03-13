@@ -12,24 +12,25 @@ export default Ember.Controller.extend({
 			countdown = function() {
 
 				for(var i = 14+1; i > 0; i--){
-					var changingDay = moment().subtract(i, 'days').format("DD MMM"), 					//substract the number of days
+					var changingDay = moment().subtract(i, 'days').format("DD MMM"); 					//substract the number of days
 																										//and make a nice list
-						testingVAR = [],
-						addedToday = function() {
-							var newTickets = 0;
-							for(var j = 0; j < startDates.length; j++){									//try for as many times as we have tickets
-								if(moment(startDates[j].toString()).isSame(changingDay, 'day')) {					//if ticket date matches this loops's date
-									newTickets++;														//count++ for 'new tickets' count
-							}
-							testingVAR.push(j);
-							return newTickets;
-						}
-					};
 
-					label.push([changingDay.toString(), addedToday()], testingVAR); 									//merging the label & creating the multi array
+					addedToday(changingDay.toString());
+
+					label.push([changingDay.toString(), addedToday()]); 					//merging the label & creating the multi array
 					}
 				return label;
-				};
+				},
+
+			addedToday = function(changingDay) {
+				var newTickets = 0;
+				for(var j = 0; j < startDates.length; j++){									//try for as many times as we have tickets
+					if(moment(startDates[j].toString()).isSame(changingDay, 'day')) {		//if ticket date matches this loops's date
+						newTickets++;														//count++ for 'new tickets' count
+					}
+				return newTickets;
+				}
+			};
 
 		return countdown();
 	}),
@@ -45,7 +46,7 @@ export default Ember.Controller.extend({
 	    }
 	},
   	actions: {
-  		daySelector(selection){ this.set(daySelect, selection); },
+  		daySelector(){ this.set(this.graphDays, selected); },
   	}
 
 });

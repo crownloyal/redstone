@@ -12,12 +12,12 @@
 <h5>Activity</h5>
 
 <p>
-	Check activity over the past 
+	Check activity over the past\n
 	{{!--{{input type="number" id="datepicker" value=graphDays default="14"}} days. --}}
-	<select {{action 'change' on='change'}}>
-    	<option>7</option>
-    	<option>14</option>
-    	<option>30</option>
+	<select id="daySelector" {{action 'daySelector' on='change'}}>
+    	<option value="7">07</option>
+    	<option value="14">14</option>
+    	<option value="30">30</option>
 	</select> days.
 </p>
 {{graphDays}}
