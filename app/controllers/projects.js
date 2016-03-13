@@ -8,25 +8,26 @@ export default Ember.Controller.extend({
 			startDates = this.get('model.issues').mapBy('created_on'),
 			updateDates = this.get('model.issues').mapBy('updated_on');
 
-		var today = function() { return moment().format("DD MM"); }(),
-			countdown = function() {
+		var today = function() { return moment().format("DD MM"); }(),								//today's date!
+			getSpecificDatefromArray = function(dateArray, index) { return dateArray[index]; }(),	//grab a date from the array
+			compareDates = function(date, anotherDate) {
+				return moment(date.toString()).isSame(anotherDate, 'day');							//compare those 2 dates - returns bool
+			}(),
 
-				for(var i = 14+1; i > 0; i--){
+			multiArrayCreator = function() {																//function which creates multi-array
+				for(var i = 14+1; i > 0; i--){															//How many days do we need?
 					var changingDay = moment().subtract(i, 'days').format("DD MMM"); 					//substract the number of days
 																										//and make a nice list
-
-					addedToday(changingDay.toString());
-
-					label.push([changingDay.toString(), addedToday()]); 					//merging the label & creating the multi array
+					label.push([changingDay.toString(), addedToday(changingDay)]); 					//merging the label & creating the multi array
 					}
 				return label;
 				},
 
 			addedToday = function(changingDay) {
 				var newTickets = 0;
-				for(var j = 0; j < startDates.length; j++){									//try for as many times as we have tickets
-					if(moment(startDates[j].toString()).isSame(changingDay, 'day')) {		//if ticket date matches this loops's date
-						newTickets++;														//count++ for 'new tickets' count
+				for(var dateComparer = 0; dateComparer < startDates.length; dateComparer++){									//try for as many times as we have tickets
+					if(compareDates()) {																//if ticket date matches this loops's date
+						newTickets++;																	//count++ for 'new tickets' count
 					}
 				return newTickets;
 				}
