@@ -12,22 +12,24 @@
 <h5>Activity</h5>
 
 <p>
-	Check activity over the past\n
-	{{!--{{input type="number" id="datepicker" value=graphDays default="14"}} days. --}}
-	<select id="daySelector" {{action 'daySelector' on='change'}}>
-    	<option value="7">07</option>
-    	<option value="14">14</option>
-    	<option value="30">30</option>
-	</select> days.
+	Check activity over the past
+
+	{{#x-select value=7 action="daySelector" default=7}}
+		{{#x-option value=7}}07{{/x-option}}
+		{{#x-option value=14}}14{{/x-option}}
+		{{#x-option value=30}}30{{/x-option}}
+	{{/x-select}}
+
+	 days.
 </p>
-{{graphDays}}<br />
-{{projectActivity}}
 {{area-chart data=projectActivity options=options}}
 <p><strong>Debug mode enabled</strong></p>
+{{graphDays}}<br />
+{{projectActivity}}
 
 <hr />
 
-<p><strong class="red">Issues in this project:</strong></p>
+<p><strong>Issues in this project:</strong></p>
 
 	<div class="masonry">
 		{{#each model.issues as |issues|}}

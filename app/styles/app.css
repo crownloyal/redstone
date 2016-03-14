@@ -141,9 +141,8 @@ input { transition: border 0.3s; }
 		border: 1px solid #d1d1d1;
 		padding: 1rem;
 		margin-bottom: 1rem;
-		min-height: 14rem;
+		min-height: 12rem;
 		transition: border 0.25s;
-		/* overflow: hidden; Sacrificing over-flowing text items for pretty hover animations*/
     	display: inline-block;
     	width: 90%;
 		 }
@@ -151,7 +150,8 @@ a .card:hover { border: 1px solid #cc0000; }
 .card .card-prominent {
 	font-size: 1.6rem;
 	font-weight: 700;
-	text-align: center; }
+	text-align: center;
+	overflow-wrap: break-word; } /* fixes long words going above and beyond*/
 .card .card-prominent::after {
 	content: '';
 	width: 30%;

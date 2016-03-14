@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
 				for (var j = 0; j < preArray.length; j++) {											//take all date array entries
 					var counter = 0;																//counter scope inside the loop
 					for(var k = 0; k < array.length; k++) {											//take all ticket date entries
-						//normalize the date format (I thought it is supposed to work any way but it will do for now)
+						//normalize the date format (I thought it is supposed to work anyway but it will do for now)
 						if ( compareDates(moment(array[k]).format("DD MMM"), moment(preArray[j][0]).format("DD MMM")) ) {
 						counter++;
 						}
@@ -42,19 +42,19 @@ export default Ember.Controller.extend({
 		result.unshift(label);		//add labels at the start
 		return result;
 	}),
-	graphDays: 7,
+	graphDays: null,
 	options: {
-	    title: 'Project activity over the past week',
-	    // height: 300,
-	    // width: 400,
+	    //title: 'Project activity over the past week',
+	    legend: { position: 'bottom' },
 
 	    animation: {
 	      startup: true,
-	      easing: 'inAndOut',
+	      duration: 600,
+	      easing: 'out',
 	    }
 	},
   	actions: {
-  		// daySelector(){ this.set(this.graphDays, selected); },
+  		daySelector(selection){ this.controller.set(graphDays, selected); },
   	}
 
 });
