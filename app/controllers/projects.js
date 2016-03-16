@@ -1,6 +1,6 @@
 import Ember from 'ember';
-import pushDates from '../utils/graph-helper';
-import pushTicketCount from '../utils/graph-helper';
+import { pushDates } from '../utils/graph-helper';
+import { pushTicketCount } from '../utils/graph-helper';
 
 export default Ember.Controller.extend({
 	projectActivity: Ember.computed('model', function() {
@@ -11,8 +11,7 @@ export default Ember.Controller.extend({
 
 		//actually doing things
 
-		Ember.Logger.debug('prepared all data');
-		result.push(pushDates(14));
+		pushDates(result, 14);
 		pushTicketCount(result, startDates, 1);
 		pushTicketCount(result, updateDates, 2);
 

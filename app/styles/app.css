@@ -58,7 +58,7 @@ nav { padding: 1rem 0;
 /* SEARCH ANIMATION */
 .content {  margin-top: 3rem;
 			margin-bottom: 3rem; }
-section { padding-top: 0.3rem; }
+section { padding-top: 1.5rem; }
 input#datepicker { width: 6rem; }
 
 input { transition: border 0.3s; }
@@ -185,9 +185,38 @@ section[class^="about-"] {
 .about-red a {
 	color: #fff;
 	text-decoration: underline; }
+.about-red input, .about-red select { color: #222; }
+.about-red input:focus, .about-red select:focus, .about-red textarea:focus { border-color: #f0c5c5; }
 .about-black {
 	color: #fff;
-	background: #352525;
+	background: #553535;
+}
+
+/*** I LOVE PATTERNS ***/
+.pattern-diamonds {
+	background-image: url('pattern/diagmonds.png')
+}
+.pattern-white-diamonds {
+	background-image: url('pattern/white-diamond-dark.png')
+}
+.pattern-small-dots {
+	background-image: url('pattern/subtle-dots.png')
+}
+.pattern-notebook {
+	background-image: url('pattern/notebook-dark.png')
+}
+.pattern-60d-lines {
+	background-image: url('http://transparenttextures.com/patterns/60-lines.png');
+}
+.about-pattern-arches {
+	background-image: url('http://transparenttextures.com/patterns/arches.png');
+}
+
+.about-ember {
+	background-image: url('http://emberjs.com/images/brand/ember_Ember-Light.png');
+	background-size: 40%;
+	background-repeat: no-repeat;
+	background-position: 0% 20%;
 }
 
 /*** FOOTER ***/

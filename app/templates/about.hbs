@@ -1,4 +1,4 @@
-<section class="about-white">
+<section class="about-white pattern-small-dots">
 	<div class="container">
 	<h3>Ember Redstone Project</h3>
 
@@ -13,7 +13,7 @@
 	</div>
 </section>
 
-<section class="about-red">
+<section class="about-red about-ember">
 	<div class="container">
 		<h4>What is Ember.js?</h4>
 
@@ -25,7 +25,7 @@
 	</div>
 </section>
 
-<section class="about-black">
+<section class="about-black pattern-white-diamonds">
 	<div class="container">
 		<h4>Where does the data come from?</h4>
 		<p>
@@ -34,7 +34,7 @@
 	</div>
 </section>
 
-<section class="about-white">
+<section class="about-white pattern-notebook">
 	<div class="container">
 	<h4>Changelog</h4>
 
@@ -225,11 +225,36 @@
 	</div>
 </section>
 
-<section class="about-red">
+<section class="about-red about-pattern-arches">
 	<div class="container">
 		<p>
 			Got some ideas you would like to see implemented? - <br />
-			<a href="mailto:dominic.brause@emc.com">Drop me an email</a> and let's see what we can do.
+			Drop me an email and let's see what we can do.
 		</p>
+
+		<form>
+			<div class="row">
+				<div class="six columns">
+					<label for="email">Your email</label>
+					{{input class="u-full-width" id="email" type="email" placeholder="hello@emc.com"}}
+				</div>
+				<div class="six columns">
+					<label for="reason">Reason for contacting</label>
+					{{#x-select class="u-full-width" id="reason "action="daySelector" default="Questions"}}
+						{{#x-option value="Questions"}}Questions{{/x-option}}
+						{{#x-option value="Ideas"}}Ideas{{/x-option}}
+						{{#x-option value="phone number"}}Can I get your number?{{/x-option}}
+					{{/x-select}}
+				</div>
+			</div>
+			<label for="message">Message</label>
+			<textarea id="message" class="u-full-width" placeholder="Hi Dominic..."></textarea>
+			<label>
+				<input type="checkbox">
+				<span>Send a copy to yourself</span>
+			</label>
+			<button>Submit</button>
+		</form>
+
 	</div>
 </section>

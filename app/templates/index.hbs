@@ -1,35 +1,38 @@
-<h4>Dashboard</h4>
+<div class="container">
 
-<section id="dashboard" class="row">
-	<div class="two-thirds column search {{if isFocused 'input--filled' ''}}">
-		{{search-box value=search id="search-box" focus-in="focused" focus-out="checkFocused"}}
-		<label class="inputLabel" for="search-box" >
-			<span class="labelContent" data-content="Search">Search</span>
-		</label>
-	</div>
-	<div class="one-third column">
-		<p class="note card">
-			The search allows you to look through issues and projects - ultimately enableling you too add multiple ones and to generate an activity graph.
-		</p>
-	</div>
-</section>
+	<h4>Dashboard</h4>
 
-<hr />
+	<section id="dashboard" class="row">
+		<div class="two-thirds column search {{if isFocused 'input--filled' ''}}">
+			{{search-box value=search id="search-box" focus-in="focused" focus-out="checkFocused"}}
+			<label class="inputLabel" for="search-box" >
+				<span class="labelContent" data-content="Search">Search</span>
+			</label>
+		</div>
+		<div class="one-third column">
+			<p class="note card">
+				The search allows you to look through issues and projects - ultimately enableling you too add multiple ones and to generate an activity graph.
+			</p>
+		</div>
+	</section>
 
-<section>
-	{{#if search}}
-	<h5>Here are the results for <strong>{{search}}</strong></h5>
-	{{else}}
-	<h5>Latest tickets:</h5>
-	{{/if}}
+	<hr />
 
-	<div class="masonry">
-    {{#each queryResults as |result index|}}
-    	{{#link-to 'issues' result.id}}
-        	{{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
-				{{result.subject}}
-		{{/issue-detail-card}}
-		{{/link-to}}
-    {{/each}}
-    </div>
-</section>
+	<section>
+		{{#if search}}
+		<h5>Here are the results for <strong>{{search}}</strong></h5>
+		{{else}}
+		<h5>Latest tickets:</h5>
+		{{/if}}
+
+		<div class="masonry">
+	    {{#each queryResults as |result index|}}
+	    	{{#link-to 'issues' result.id}}
+	        	{{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
+					{{result.subject}}
+			{{/issue-detail-card}}
+			{{/link-to}}
+	    {{/each}}
+	    </div>
+	</section>
+</div>
