@@ -16,18 +16,18 @@
 	<p>
 		Check activity over the past
 
-		{{#x-select value=7 action="daySelector" default=7}}
-			{{#x-option value=7}}07{{/x-option}}
-			{{#x-option value=14}}14{{/x-option}}
-			{{#x-option value=30}}30{{/x-option}}
+		{{#x-select value="7" action="changeDayCount" default=7}}
+			{{#x-option value="7"}}07{{/x-option}}
+			{{#x-option value="14"}}14{{/x-option}}
+			{{#x-option value="30"}}30{{/x-option}}
 		{{/x-select}}
 
 		 days.
 	</p>
 	{{area-chart data=projectActivity options=options}}
-	<p><strong>Debug mode enabled</strong></p>
+	<p><strong>Debug mode enabled</strong><br />
 	{{graphDays}}<br />
-	{{projectActivity}}
+	{{projectActivity}}</p>
 
 	<hr />
 

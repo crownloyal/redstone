@@ -58,7 +58,7 @@ nav { padding: 1rem 0;
 /* SEARCH ANIMATION */
 .content {  margin-top: 3rem;
 			margin-bottom: 3rem; }
-section { padding-top: 1.5rem; }
+.outlet-wrapper .container { padding: 1.5rem 0; }
 input#datepicker { width: 6rem; }
 
 input { transition: border 0.3s; }
@@ -185,7 +185,7 @@ section[class^="about-"] {
 .about-red a {
 	color: #fff;
 	text-decoration: underline; }
-.about-red input, .about-red select { color: #222; }
+.about-red input, .about-red select, .about-red textarea { color: #222; }
 .about-red input:focus, .about-red select:focus, .about-red textarea:focus { border-color: #f0c5c5; }
 .about-black {
 	color: #fff;
