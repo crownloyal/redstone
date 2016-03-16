@@ -30,9 +30,9 @@
 
 	<h5>Activity</h5>
 
-	{{#if activity}}
-		{{activity}}
-		{{!area-chart data=activity options=options}}
+	{{#if issueActivity}}
+		{{issueActivity}}
+		{{area-chart data=issueActivity options=options}}
 	{{else}}
 	<p>There was no activity on this ticket</p>
 	{{/if}}

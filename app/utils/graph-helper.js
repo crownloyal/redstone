@@ -6,11 +6,9 @@ function compareDates(date, anotherDate) {
 }
 
 export function pushTicketCount(preparedArray, array, targetIndex) {
-	Ember.Logger.debug('counting...');
-
 		for (var j = 0; j < preparedArray.length; j++) {				//take all date array entries
-			var counter = 0;									//counter scope inside the loop
-			for(var k = 0; k < array.length; k++) {				//take all ticket date entries
+			var counter = 0;											//counter scope inside the loop
+			for(var k = 0; k < array.length; k++) {						//take all ticket date entries
 			//normalize the date format (I thought it is supposed to work anyway but it will do for now)
 				if ( compareDates(moment(array[k]).format("DD MMM"), moment(preparedArray[j][0]).format("DD MMM")) ) {
 					counter++;
@@ -27,5 +25,4 @@ export function pushDates(array, count) {
 			var changingDay = moment().subtract(i, 'days').format("DD MMM");
 			array.push([changingDay, ]);
 			}
-		Ember.Logger.debug('pushed dates');
 }

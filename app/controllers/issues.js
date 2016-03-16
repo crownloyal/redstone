@@ -1,25 +1,29 @@
 import Ember from 'ember';
+import { pushDates } from '../utils/graph-helper';
+import { pushTicketCount } from '../utils/graph-helper';
 
 export default Ember.Controller.extend({
 
-	data: function() { return this.get('model'); }.property('model'),
-	// activity: Ember.computed('data', function() {
-	// 	var issueActivity = Ember.A([['Date', 'Comments']]),
-	// 		tempArray = [],
-	// 		modelObj = this.get('data'),
-	// 		journals = modelObj.get('journals'),
-	// 		status = modelObj.get('status'); //fancy obj chain (model.issues.journals.ids)
+	issueActivity: Ember.computed('model', function() {
+		var label = ['Date', 'Updated'],
+			startDate = this.get('model.issues.created_on'),
+			updateDates = this.get('model.issues.updated_on'),
+			graphDays = (moment().diff(startDate, 'days') + 1),
+			result = [];
 
-	// 		issueActivity.push(status.id);
-	// 		issueActivity.push(journals);
+		//actually doing things
+		pushDates(result, graphDays);
+		pushTicketCount(result, updateDates, 1);
 
-	// 	for(var index in journals) {
-	// 		issueActivity.push(index);
-	// 		for(var journal = 0; journal.length === index.length; journal++){
-	// 			tempArray.push(index[journal]); // get data from inherited array
-	// 			issueActivity.push(tempArray);
-	// 		}
-	// 	}
-	// 	return issueActivity;
-	// })
+		result.unshift(label);		//add labels at the start
+		return result;
+	}),
+	options: {
+		legend: { position: 'bottom' },
+ 		animation: {
+ 			startup: true,
+			duration: 600,
+			easing: 'out',
+ 	    }
+ 	}
 });

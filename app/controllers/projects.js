@@ -10,13 +10,13 @@ export default Ember.Controller.extend({
 			result = [];
 
 		//actually doing things
-		pushDates(result, 14);
+		pushDates(result, this.get('graphDays'));
 		pushTicketCount(result, startDates, 1);
 		pushTicketCount(result, updateDates, 2);
 
 		result.unshift(label);		//add labels at the start
 		return result;
-	}),
+	}).property('graphDays'),
 	options: {
 		legend: { position: 'bottom' },
  		animation: {
@@ -26,10 +26,12 @@ export default Ember.Controller.extend({
  	    }
  	},
 
-	graphDays: '14',
+	graphDays: 14,					//default: 14 days
   	actions: {
   		changeDayCount(value, component) {
-  			this.set(this.graphDays, value)
+  			if (value) {
+        		this.set('graphDays', value)
+      		}
   		}
   	}
 
