@@ -1,217 +1,235 @@
-<h3>Ember Redstone Project</h3>
+<section class="about-white">
+	<div class="container">
+	<h3>Ember Redstone Project</h3>
 
-<h4>Story and idea of this Project</h4>
+	<h4>Story and idea of this Project</h4>
 
-<p><i>Once upon a time...</i></p>
-<p><i>Redmine is a ugly mostrum from ancient times. A king seeked out for brave code warriors who who bring piece to the land and the people. The knights forged a sword made from purest red stone.</i></p>
+	<p><i>Once upon a time...</i><br />
+	<i>Redmine, an with evil enriched monster from ancient times, threatened the kingdom or .A king seeked out for brave code warriors who who bring piece to the land and the people. The knights forged a sword made from purest red stone.</i></p>
 
-<p>Redstone provides real-time analytical models for Mozy Redmine activity. Based on Redmine's current reporting and analysis capabilities stakeholders can not *easily* track activity patterns and based on external variables.</p>
+	<p>Redstone provides real-time analytical models for Mozy Redmine activity. Based on Redmine's current reporting and analysis capabilities stakeholders can not *easily* track activity patterns and based on external variables.</p>
 
-<p>Therefore we developed a user-facing web app which pulls Redmine's data and manages it by dates. You are able to look for certain tags and combine them to create custom graphs.</p>
+	<p>Therefore we developed a user-facing web app which pulls Redmine's data and manages it by dates. You are able to look for certain tags and combine them to create custom graphs.</p>
+	</div>
+</section>
 
-<h4>What is Ember.js?</h4>
+<section class="about-red">
+	<div class="container">
+		<h4>What is Ember.js?</h4>
 
-<p>Ember.js or simply Ember is a Javascript MVC framework, delivering a "Convention over configuration" approach for what they call "ambitious web apps".</p>
-<p>Sure when you start up a new app, you need to consider a few things; basically you need to architect from the ground up - how do you manage your models, how will the data routing work out? Lot's of questions!<br />
-Ember jumps in right here and already solves you all those problems people have seen already hundereds of times. Instead it gives you certain patterns which, once learned, turn out to be powerful so you can focus on what your app needs to deliver.</p>
+		<p>Ember.js or simply Ember is a Javascript MVC framework, delivering a "Convention over configuration" approach for what they call "ambitious web apps".</p>
+		<p>Sure when you start up a new app, you need to consider a few things; basically you need to architect from the ground up - how do you manage your models, how will the data routing work out? Lot's of questions!<br />
+		Ember jumps in right here and already solves you all those problems people have seen already hundereds of times. Instead it gives you certain patterns which, once learned, turn out to be powerful so you can focus on what your app needs to deliver.</p>
 
-<p>If you want to read an ingenious sales pitch - have a look on <a href="http://brewhouse.io/blog/2015/05/13/emberjs-an-antidote-to-your-hype-fatigue.html">Brewhouse's blog</a> which gives you an in-depth look into the problems we face on a day-to-day basis as a Javascript engineer.</p>
+		<p>If you want to read an ingenious sales pitch - have a look on <a href="http://brewhouse.io/blog/2015/05/13/emberjs-an-antidote-to-your-hype-fatigue.html">Brewhouse's blog</a> which gives you an in-depth look into the problems we face on a day-to-day basis as a Javascript engineer.</p>
+	</div>
+</section>
 
-<h4>Where does the data come from?</h4>
-<p>
-	The data is coming from the only source of truth - the production REDMINE database itself. It exposes a REST API which we can use to get <strong>live</strong> data, yes you are seeing this right, the data is live and updates automatically when there are changes.
-</p>
+<section class="about-black">
+	<div class="container">
+		<h4>Where does the data come from?</h4>
+		<p>
+			The data is coming from the only source of truth - the production REDMINE database itself. It exposes a REST API which we can use to get <strong>live</strong> data, yes you are seeing this right, the data is live and updates automatically when there are changes.
+		</p>
+	</div>
+</section>
 
-<hr />
+<section class="about-white">
+	<div class="container">
+	<h4>Changelog</h4>
 
-<h4>Changelog</h4>
-
-<p>
-	<strong>March 10 2016</strong> - <i class="muted">EOD commit : 3323081</i>
-	<ul>
-		<li>deprecated embers-select; reverted to native HTML</li>
-		<li>updated mirage interface</li>
-		<li>changed graph meta to only hold 'new' information for now</li>
-		<li>models are now slightly more explicit</li>
-		<li>optimised Google font loading times</li>
-		<li>about now actually talks about itself</li>
-	</ul>
-</p>
-
-<p>
-	<strong>March 09 2016</strong> - <i class="muted">EOD commit : 3323081</i>
-	<ul>
-		<li>added ember-select for drop-down selections</li>
-		<li>drops added to project</li>
-		<li>updated read function</li>
-		<li>models are now slightly more explicit</li>
-		<li>fiddle with Array calculator</li>
-		<li>added custom fonts</li>
-	</ul>
-</p>
-
-<p>
-	<strong>March 08 2016 </strong> - <i class="muted">EOD commit : 1c3072f</i>
-	<ul>
-		<li>added ember-simple-auth to manage user authentication</li>
-		<li>injecting session into application controller</li>
-		<li>added jsonp callback to adapter</li>
-		<li>using moments to render date array</li>
-		<li>sacrificed card text overflow for pretty animations</li>
-	</ul>
-</p>
-
-<p>
-	<strong>March 07 2016</strong> - <i class="muted">EOD commit : 2a0a1c9</i>
-	<ul>
-		<li>added readme.md</li>
-		<li>figured model enumerables to parse through model data</li>
-	</ul>
-</p>
-
-<p>
-	<strong>March 04 2016</strong> - <i class="muted">EOD commit : dffcdcf</i>
-	<ul>
-		<li>updated to ember 2.4.0</li>
-		<li>added journal as it's own model</li>
-		<li>linking based on last commit works flawless</li>
-		<li>introduced bug as I am looking for nested properties with @each to get my journals [test only pass as 55/61]</li>
-		<li>started implementing project graph</li>
-	</ul>
-</p>
-
-<p>
-	<strong>March 03 2016</strong> - <i class="muted">EOD commit : 4df0e4f</i>
-	<ul>
-		<li>fixed dependencies</li>
-		<li>fixed controller model setups</li>
-		<li>updated today's tickets in mirage</li>
-		<li>masonry layout for cards implemented</li>
-		<li>dashboard and project pages transferred to masonry</li>
-		<li>card template adapted to masonry</li>
-		<li>adjusted masonry for Firefox</li>
-		<li>journals have their own model</li>
-	</ul>
-</p>
-
-<p>
-<strong>March 02 2016</strong> - <i class="muted">EOD commit : c095f93</i>
-	<ul>
-		<li>function now returning model results</li>
-	</ul>
-</p>
-
-<p>
-	<strong>March 01 2016</strong> - <i class="muted">EOD commit : e3a9099</i>
+	<p>
+		<strong>March 10 2016</strong> - <i class="muted">EOD commit : 3323081</i>
 		<ul>
-			<li>unused packages removed</li>
-			<li>search-box component added</li>
-			<li>search working and only dependent on controller now</li>
-			<li>search-box pretty, needs a little fix</li>
-			<li>updated some transition styles</li>
-			<li>updated dashboard filter</li>
+			<li>deprecated embers-select; reverted to native HTML</li>
+			<li>updated mirage interface</li>
+			<li>changed graph meta to only hold 'new' information for now</li>
+			<li>models are now slightly more explicit</li>
+			<li>optimised Google font loading times</li>
+			<li>about now actually talks about itself</li>
 		</ul>
-</p>
+	</p>
 
-<p>
-	<strong>February 29 2016</strong> - <i class="muted">EOD commit : c155f46</i>
-	<ul>
-		<li>found jsonp documentation - will need &callback=redstone > needs to be enabled by Tyler Peters</li>
-	</ul>
-	<ul>
-		<li>overflow:hidden for cards</li>
-		<li>added custom fields to issue model</li>
-		<li>added custom field serializer</li>
-	</ul>
-</p>
+	<p>
+		<strong>March 09 2016</strong> - <i class="muted">EOD commit : 3323081</i>
+		<ul>
+			<li>added ember-select for drop-down selections</li>
+			<li>drops added to project</li>
+			<li>updated read function</li>
+			<li>models are now slightly more explicit</li>
+			<li>fiddle with Array calculator</li>
+			<li>added custom fonts</li>
+		</ul>
+	</p>
 
-<p>
-	<strong>February 28 2016</strong> - <i class="muted">EOD commit : f5a8bo5</i>
-	<ul>
-		<li>added project serializer for parent relationship</li>
-		<li>added parent attribute to project model</li>
-		<li>projects template show parent project if it exists</li>
-	</ul>
-	<ul>
-		<li>index controller knows about search</li>
-		<li>changed issue controller to look for content instead of model to avoid confusion</li>
-	</ul>
-</p>
+	<p>
+		<strong>March 08 2016 </strong> - <i class="muted">EOD commit : 1c3072f</i>
+		<ul>
+			<li>added ember-simple-auth to manage user authentication</li>
+			<li>injecting session into application controller</li>
+			<li>added jsonp callback to adapter</li>
+			<li>using moments to render date array</li>
+			<li>sacrificed card text overflow for pretty animations</li>
+		</ul>
+	</p>
 
-<p>
-<strong>February 27 2016</strong> - <i class="muted">EOD commit : e3dde24</i>
-	<ul>
-		<li>added card-component</li>
-		<li>added card styles</li>
-		<li>added font-awesome</li>
-		<li>changed RedStone title to 'Redstone'</li>
-		<li>did something about parsing the journals</li>
-		<li>added some more animations for the cards</li>
-		<li>did some change in 'about' template</li>
-		<li>added card view to projects</li>
-		<li>modified the really simple looking project view</li>
-		<li>experiment further with search</li>
-	</ul>
-	<ul>
-		<li>model manager for graph implemented</li>
-		<li>navigation now looking pristine</li>
-	</ul>
-</p>
+	<p>
+		<strong>March 07 2016</strong> - <i class="muted">EOD commit : 2a0a1c9</i>
+		<ul>
+			<li>added readme.md</li>
+			<li>figured model enumerables to parse through model data</li>
+		</ul>
+	</p>
 
-<p>
-<strong>February 25 2016</strong> - <i class="muted">EOD commit : 3e3e0a9</i>
-	<ul>
-		Dependencies added:
-		<li>ember-cli-filter-component</li>
-		<li>ember-google-charts</li>
-	</ul>
-	<ul>
-		<li>added journal support for issues</li>
-	</ul>
-</p>
+	<p>
+		<strong>March 04 2016</strong> - <i class="muted">EOD commit : dffcdcf</i>
+		<ul>
+			<li>updated to ember 2.4.0</li>
+			<li>added journal as it's own model</li>
+			<li>linking based on last commit works flawless</li>
+			<li>introduced bug as I am looking for nested properties with @each to get my journals [test only pass as 55/61]</li>
+			<li>started implementing project graph</li>
+		</ul>
+	</p>
 
-<p>
-<strong>February 24 2016</strong> - <i class="muted">EOD commit : b78b8dc</i>
-	<ul>
-		<li>models adjusted to hold more object properties</li>
-		<li>model relationship tests successful</li>
-		<li>implemented REST Adapter</li>
-		<li>using mirage for fixture data now</li>
-		<li>! Redmine API limitation - only returns 100 items; need to think about that another time</li>
-		<li>! Redmine doesn't support CORS header; yay - thanks Redmine!</li>
-	</ul>
-	<ul>
-		<li>injected Skeleton CSS framework for grid bliss</li>
-		<li>footer section now slightly less ugly</li>
-		<li>header is pretty</li>
-		<li>templating changed</li>
-		<li>index route is now called dashboard</li>
-		<li>issue & project requests are now returning a single promise</li>
-		<li>dashboard performance doubled (rough estimate)</li>
-	</ul>
-</p>
+	<p>
+		<strong>March 03 2016</strong> - <i class="muted">EOD commit : 4df0e4f</i>
+		<ul>
+			<li>fixed dependencies</li>
+			<li>fixed controller model setups</li>
+			<li>updated today's tickets in mirage</li>
+			<li>masonry layout for cards implemented</li>
+			<li>dashboard and project pages transferred to masonry</li>
+			<li>card template adapted to masonry</li>
+			<li>adjusted masonry for Firefox</li>
+			<li>journals have their own model</li>
+		</ul>
+	</p>
 
-<p>
-<strong>February 23 2016</strong> - <i class="muted">EOD commit : ae60154</i>
-	<ul>
-		<li>using fixture data to simulate REST response</li>
-		<li>index.hbs now lists all items returned</li>
-		<li>has header</li>
-		<li>has footer</li>
-		<li>added serializer as <a href="https://guides.emberjs.com/v2.3.0/models/customizing-serializers/" target="_new">documented</a> to parse through nested objects</li>
-		<li>relations ship between issues & projects established</li>
-		<li>routing full implemented</li>
-	</ul>
-</p>
-<p>
-<strong>February 19 2016</strong>
-	<ul>
-		<li>Ember.js framework set</li>
-		<li>First model blue prints</li>
-	</ul>
-</p>
+	<p>
+	<strong>March 02 2016</strong> - <i class="muted">EOD commit : c095f93</i>
+		<ul>
+			<li>function now returning model results</li>
+		</ul>
+	</p>
 
-<p>
-	Got some ideas you would like to see implemented? - <br />
-	<a href="mailto:dominic.brause@emc.com">Drop me an email</a> and let's see what we can do.
-</p>
+	<p>
+		<strong>March 01 2016</strong> - <i class="muted">EOD commit : e3a9099</i>
+			<ul>
+				<li>unused packages removed</li>
+				<li>search-box component added</li>
+				<li>search working and only dependent on controller now</li>
+				<li>search-box pretty, needs a little fix</li>
+				<li>updated some transition styles</li>
+				<li>updated dashboard filter</li>
+			</ul>
+	</p>
+
+	<p>
+		<strong>February 29 2016</strong> - <i class="muted">EOD commit : c155f46</i>
+		<ul>
+			<li>found jsonp documentation - will need &callback=redstone > needs to be enabled by Tyler Peters</li>
+		</ul>
+		<ul>
+			<li>overflow:hidden for cards</li>
+			<li>added custom fields to issue model</li>
+			<li>added custom field serializer</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>February 28 2016</strong> - <i class="muted">EOD commit : f5a8bo5</i>
+		<ul>
+			<li>added project serializer for parent relationship</li>
+			<li>added parent attribute to project model</li>
+			<li>projects template show parent project if it exists</li>
+		</ul>
+		<ul>
+			<li>index controller knows about search</li>
+			<li>changed issue controller to look for content instead of model to avoid confusion</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>February 27 2016</strong> - <i class="muted">EOD commit : e3dde24</i>
+		<ul>
+			<li>added card-component</li>
+			<li>added card styles</li>
+			<li>added font-awesome</li>
+			<li>changed RedStone title to 'Redstone'</li>
+			<li>did something about parsing the journals</li>
+			<li>added some more animations for the cards</li>
+			<li>did some change in 'about' template</li>
+			<li>added card view to projects</li>
+			<li>modified the really simple looking project view</li>
+			<li>experiment further with search</li>
+		</ul>
+		<ul>
+			<li>model manager for graph implemented</li>
+			<li>navigation now looking pristine</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>February 25 2016</strong> - <i class="muted">EOD commit : 3e3e0a9</i>
+		<ul>
+			Dependencies added:
+			<li>ember-cli-filter-component</li>
+			<li>ember-google-charts</li>
+		</ul>
+		<ul>
+			<li>added journal support for issues</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>February 24 2016</strong> - <i class="muted">EOD commit : b78b8dc</i>
+		<ul>
+			<li>models adjusted to hold more object properties</li>
+			<li>model relationship tests successful</li>
+			<li>implemented REST Adapter</li>
+			<li>using mirage for fixture data now</li>
+			<li>! Redmine API limitation - only returns 100 items; need to think about that another time</li>
+			<li>! Redmine doesn't support CORS header; yay - thanks Redmine!</li>
+		</ul>
+		<ul>
+			<li>injected Skeleton CSS framework for grid bliss</li>
+			<li>footer section now slightly less ugly</li>
+			<li>header is pretty</li>
+			<li>templating changed</li>
+			<li>index route is now called dashboard</li>
+			<li>issue & project requests are now returning a single promise</li>
+			<li>dashboard performance doubled (rough estimate)</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>February 23 2016</strong> - <i class="muted">EOD commit : ae60154</i>
+		<ul>
+			<li>using fixture data to simulate REST response</li>
+			<li>index.hbs now lists all items returned</li>
+			<li>has header</li>
+			<li>has footer</li>
+			<li>added serializer as <a href="https://guides.emberjs.com/v2.3.0/models/customizing-serializers/" target="_new">documented</a> to parse through nested objects</li>
+			<li>relations ship between issues & projects established</li>
+			<li>routing full implemented</li>
+		</ul>
+	</p>
+	<p>
+	<strong>February 19 2016</strong>
+		<ul>
+			<li>Ember.js framework set</li>
+			<li>First model blue prints</li>
+		</ul>
+	</p>
+	</div>
+</section>
+
+<section class="about-red">
+	<div class="container">
+		<p>
+			Got some ideas you would like to see implemented? - <br />
+			<a href="mailto:dominic.brause@emc.com">Drop me an email</a> and let's see what we can do.
+		</p>
+	</div>
+</section>

@@ -7,7 +7,7 @@ body { font-family: 'Open Sans', sans-serif; }
 h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
 #title { font-family: 'Ubuntu', sans-serif; }
 
-a, .red { color: #cc0000;
+a, .red { color: #cc3232;
 		  text-decoration: none; }
 a { transition: text-decoration 0.2s; }
 li { margin-bottom: 0.25rem; }
@@ -29,7 +29,7 @@ nav .active { font-weight: 700; }
 /*** HEADER ***/
 header, footer {
 	padding: 1rem;
-	background-color: #352525;
+	background-color: #352525; /* grey with a dash of bordeaux */
 	color: #fff; }
 header { height: 5rem; }
 @media (max-width: 550px) { header { height: 17rem; } }
@@ -39,7 +39,7 @@ header nav a::after {
 	display: block;
 	top: 1.25rem;
 	height: 0.5rem;
-	background: #cc0000;
+	background: #cc3232;
 	content: '';
 	opacity: 0;
 	transition: opacity 0.3s, transform 0.3s;
@@ -102,7 +102,7 @@ input { transition: border 0.3s; }
 	left: 0;
 	height: 100%;
 	width: 100%;
-	color: #cc0000;
+	color: #cc3232;
 	padding: 0.25rem 0;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -112,7 +112,7 @@ input { transition: border 0.3s; }
 .search #search-box:focus + .search .inputLabel .labelContent,
 .input--filled .labelContent { transform: translate3d(0, 100%, 0); }
 .search #search-box:focus + .search #search-box,
-.search .input--filled #search-box { border-color: #cc0000; }
+.search .input--filled #search-box { border-color: #cc3232; }
 
 /* CARD GRID */
 .masonry {
@@ -163,7 +163,7 @@ a .card:hover { border: 1px solid #cc0000; }
 	background: #d1d1d1;
 	transition: background 0.25s, width 0.25s, left 0.2s; }
 .card:hover .card-prominent::after {
-	background: #cc0000;
+	background: #cc3232;
 	width: 50%;
 	left: 25%; }
 .card .card-project {
@@ -173,6 +173,22 @@ a .card:hover { border: 1px solid #cc0000; }
 	margin-bottom: 2rem; }
 .card .card-ticket { float: left; }
 .card .card-updated { float: right; }
+
+/*** ABOUT SECTION ***/
+section[class^="about-"] {
+	padding: 2.5rem 0;
+}
+.about-red {
+	color: #fff;
+	background: #cc3232;
+}
+.about-red a {
+	color: #fff;
+	text-decoration: underline; }
+.about-black {
+	color: #fff;
+	background: #352525;
+}
 
 /*** FOOTER ***/
 footer img#logo {

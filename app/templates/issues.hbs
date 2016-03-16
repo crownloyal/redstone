@@ -1,42 +1,45 @@
-<section class="row">
+<div class="container">
 
-<h5>Issue {{model.id}}</h5>
+	<section class="row">
 
-	<div class="one-half column">
-		<p>
-		<strong>Ticket #</strong> {{model.issues.id}}<br />
-		<strong>Project:</strong> {{#link-to 'projects' model.issues.project.id}}{{model.issues.project.name}}{{/link-to}}<br />
-		<strong>Tracker:</strong> {{model.issues.tracker.name}}<br />
-		<strong>Priority:</strong> {{model.issues.priority.name}}<br />
-		<strong>Author:</strong> {{model.issues.author.name}}
-		</p>
-	</div>
-	<div class="one-half column">
-		<strong>Status:</strong> {{model.issues.status.name}}<br />
-		<strong>Last updated:</strong> {{moment-from-now model.issues.updated_on}}<br />
-		<strong>Created:</strong> {{moment-format model.issues.created_on 'LL'}}<br /><br />
-		<strong>Assigned to:</strong> {{model.issues.assigned_to.name}}
-	</div>
-</section>
+	<h5>Issue {{model.id}}</h5>
 
-<hr />
+		<div class="one-half column">
+			<p>
+			<strong>Ticket #</strong> {{model.issues.id}}<br />
+			<strong>Project:</strong> {{#link-to 'projects' model.issues.project.id}}{{model.issues.project.name}}{{/link-to}}<br />
+			<strong>Tracker:</strong> {{model.issues.tracker.name}}<br />
+			<strong>Priority:</strong> {{model.issues.priority.name}}<br />
+			<strong>Author:</strong> {{model.issues.author.name}}
+			</p>
+		</div>
+		<div class="one-half column">
+			<strong>Status:</strong> {{model.issues.status.name}}<br />
+			<strong>Last updated:</strong> {{moment-from-now model.issues.updated_on}}<br />
+			<strong>Created:</strong> {{moment-format model.issues.created_on 'LL'}}<br /><br />
+			<strong>Assigned to:</strong> {{model.issues.assigned_to.name}}
+		</div>
+	</section>
 
-<h5>{{model.issues.subject}}</h5>
-<p>{{model.issues.description}}</p>
+	<hr />
 
-<hr />
+	<h5>{{model.issues.subject}}</h5>
+	<p>{{model.issues.description}}</p>
 
-<h5>Activity</h5>
+	<hr />
 
-{{#if activity}}
-	{{activity}}
-	{{!area-chart data=activity options=options}}
-{{else}}
-<p>There was no activity on this ticket</p>
-{{/if}}
+	<h5>Activity</h5>
 
-{{#each-in model.journals as |journals|}}
-    {{model.journals.user.name}}: {{moment-format model.journals.created_on}}<br/>
-{{else}}
-	<p>There was no activity.</p>
-{{/each-in}}
+	{{#if activity}}
+		{{activity}}
+		{{!area-chart data=activity options=options}}
+	{{else}}
+	<p>There was no activity on this ticket</p>
+	{{/if}}
+
+	{{#each-in model.journals as |journals|}}
+	    {{model.journals.user.name}}: {{moment-format model.journals.created_on}}<br/>
+	{{else}}
+		<p>There was no activity.</p>
+	{{/each-in}}
+</div>
