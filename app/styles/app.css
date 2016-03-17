@@ -26,6 +26,8 @@ nav .active { font-weight: 700; }
 .muted { color: #333;
 		 font-size: 1.3rem; }
 textarea { min-height: 15rem; }
+.align-left { float: left; }
+.strike-through { text-decoration: line-through; }
 
 /*** HEADER ***/
 header, footer {
@@ -175,6 +177,9 @@ a .card:hover { border: 1px solid #cc0000; }
 .card .card-updated { float: right; }
 
 /*** ABOUT SECTION ***/
+
+.icon-punchlines { text-align: center; }
+.icon-punchlines .about-icon { font-size: 5rem; }
 .about-red {
 	color: #fff;
 	background: #cc3232;
@@ -182,7 +187,10 @@ a .card:hover { border: 1px solid #cc0000; }
 .about-red a {
 	color: #fff;
 	text-decoration: underline; }
-.about-red input, .about-red select, .about-red textarea { color: #222; }
+.about-red input, .about-red select, .about-red textarea, .about-red > button { color: #222; }
+.about-red > button:hover {
+	color: #fff;
+	border-color: #fff; }
 .about-red input:focus, .about-red select:focus, .about-red textarea:focus { border-color: #f0c5c5; }
 .about-black {
 	color: #fff;
@@ -210,10 +218,10 @@ a .card:hover { border: 1px solid #cc0000; }
 }
 
 .about-ember {
-	background-image: url('http://emberjs.com/images/brand/ember_Ember-Light.png');
+	background-image: url('http://emberjs.com/images/brand/ember_Ember-Light.png'), url('http://emberjs.com/images/tomsters/builtwith.png');
 	background-size: 40%;
 	background-repeat: no-repeat;
-	background-position: 0% 20%;
+	background-position: left center, center right;
 }
 
 /*** FOOTER ***/

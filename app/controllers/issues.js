@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 import { pushDates } from '../utils/graph-helper';
 import { pushTicketCount } from '../utils/graph-helper';
 
@@ -12,11 +13,15 @@ export default Ember.Controller.extend({
 			result = [];
 
 		//actually doing things
-		pushDates(result, graphDays);
-		pushTicketCount(result, updateDates, 1);
+		if(graphDays < 0){
+			return false;}
+		else {
+			pushDates(result, graphDays);
+			pushTicketCount(result, updateDates, 1);
 
-		result.unshift(label);		//add labels at the start
-		return result;
+			result.unshift(label);		//add labels at the start
+			return result;
+		}
 	}),
 	options: {
 		legend: { position: 'bottom' },

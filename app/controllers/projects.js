@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
  	    }
  	},
 
-	graphDays: 14,					//default: 14 days
+	graphDays: '',		//default: 14 days set in template
   	actions: {
   		changeDayCount(value, component) {
   			if (value) {

@@ -1,4 +1,4 @@
-<section class="about-white pattern-small-dots">
+<section class="about-white">
 	<div class="container">
 	<h3>Ember Redstone Project</h3>
 
@@ -10,43 +10,130 @@
 	<p>Redstone provides real-time analytical models for <strong>Mozy Redmine</strong> activity. Based on Redmine's current reporting and analysis capabilities, stakeholders can not <i>easily</i> track activity patterns and based on external variables.</p>
 
 	<p>Therefore we developed a user-facing web app which pulls Redmine's data and manages it by activity. You are able to look for certain tags and combine them to create custom graphs.</p>
+
+	<section class="row icon-punchlines">
+		<div class="one-third column">
+			<span class="about-icon">{{fa-icon 'fa-clock-o'}}</span>
+			<p>Instant updates</p>
+		</div>
+
+		<div class="one-third column">
+			<span class="about-icon">{{fa-icon 'fa-tasks'}}</span>
+			<p>Manage progress</p>
+		</div>
+
+		<div class="one-third column">
+			<span class="about-icon">{{fa-icon 'fa-trophy'}}</span>
+			<p>Achieve success</p>
+		</div>
+	</section>
+
 	</div>
 </section>
 
 <section class="about-red about-ember">
 	<div class="container">
-		<h4>What is Ember.js?</h4>
+		<h4>Built with Ember!</h4>
 
-		<p>Ember.js or simply Ember is a Javascript MVC framework, delivering a "Convention over configuration" approach for what they call "ambitious web apps".</p>
-		<p>Sure when you start up a new app, you need to consider a few things; basically you need to architect from the ground up - how do you manage your models, how will the data routing work out? Lot's of questions!<br />
-		Ember jumps in right here and already solves you all those problems people have seen already hundereds of times. Instead it gives you certain patterns which, once learned, turn out to be powerful so you can focus on what your app needs to deliver.</p>
+		<div class="row">
+			<div class="two-thirds column">
+				<p>Ember.js or simply Ember is a Javascript MVVC framework, delivering a "convention over configuration" approach for what they call "ambitious web apps".</p>
 
-		<p>If you want to read an ingenious sales pitch - have a look on <a href="http://brewhouse.io/blog/2015/05/13/emberjs-an-antidote-to-your-hype-fatigue.html">Brewhouse's blog</a> which gives you an in-depth look into the problems we face on a day-to-day basis as a Javascript engineer.</p>
+				<p>The basic main advantage over all the other fancy frameworks out there are fixed rules and ideas on how to build applications. Questions about how to structure your code and where to store application state and data have been ask relentless times in the past; with Ember.js those are already answered as it is heavily opinionated.<br />
+				Obviously, at the beginning, you will need some to learn the basics but progressingly you will start to appreciate that you can actually take action building the app instead of architecting it.</p>
+
+				<p>If you want to read an ingenious sales pitch - have a look on <a href="http://brewhouse.io/blog/2015/05/13/emberjs-an-antidote-to-your-hype-fatigue.html">Brewhouse's blog</a> which gives you an in-depth look into the problems we face on a day-to-day basis as a Javascript engineer.</p>
+
+				<p>To get some examples on the potential Ember has, please have a look at <a href="http://builtwithember.io/">builtwithember.io</a>.</p>
+			</div>
+		</div>
 	</div>
 </section>
 
 <section class="about-black pattern-white-diamonds">
 	<div class="container">
 		<h4>Where does the data come from?</h4>
-		<p>
-			The data is coming from the only source of truth - the production REDMINE database itself. It exposes a REST API which we can use to get <strong>live</strong> data, yes you are seeing this right, the data is live and updates automatically when there are changes.
-		</p>
+
+		<section class="row icon-punchlines">
+			<div class="one-third column">
+				<span class="about-icon">{{fa-icon 'fa-database'}}</span>
+				<p>Redmine Database</p>
+			</div>
+
+			<div class="one-third column">
+				<span class="about-icon">{{fa-icon 'fa-terminal'}}</span>
+				<p>REST API</p>
+			</div>
+
+			<div class="one-third column">
+				<span class="about-icon">{{fa-icon 'fa-area-chart'}}</span>
+				<p>Draw fancy graphs</p>
+			</div>
+
+			<p>
+				The data is coming from the only source of truth - the production REDMINE database itself. It exposes a REST API which we can use to get <strong>live</strong> data. All changes and updates in Redmine will instantly reflect here.
+			</p>
+
+		</section>
+
 	</div>
 </section>
 
-<section class="about-white pattern-notebook">
+<section class="about-white">
 	<div class="container">
 	<h4>Changelog</h4>
 
 	<p>
+		<strong>March 16 2016</strong> - <i class="muted">EOD commit : 036e698</i>
+		<ul>
+			<li>changed base color to <strong class="red">#cc3232</strong> which is easier on the eyes</li>
+			<li>created graph utility for global function access</li>
+			<li>changed application layout to manage flexible content colors</li>
+			<li>changed about template layout</li>
+			<li>optimization for first headings in issue template</li>
+			<li>added bunch of backgrounds for about.hbs</li>
+			<li>charts now bound to selective property</li>
+			<li>issues render graph according to their start date</li>
+			<li>issue graph needs fix</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 14 2016</strong> - <i class="muted">EOD commit : 42bbe33</i>
+		<ul>
+			<li>fixed card CSS styles</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 13 2016</strong> - <i class="muted">EOD commit : 9f6ef15</i>
+		<ul>
+			<li>refactored the functions in projects controller to work independently</li>
+			<li>updated readme</li>
+			<li>merged multiple instances of readme</li>
+			<li>micro functions for graph functionality nw</li>
+			<li>updated about template</li>
+			<li>graph function now returns arrays with correct target index</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 11 2016</strong> - <i class="muted">EOD commit : fa65c60</i>
+		<ul>
+			<li>added priority to search</li>
+			<li>fixed missing day item</li>
+		</ul>
+	</p>
+
+	<p>
 		<strong>March 10 2016</strong> - <i class="muted">EOD commit : 3323081</i>
 		<ul>
-			<li>deprecated embers-select; reverted to native HTML</li>
-			<li>updated mirage interface</li>
-			<li>changed graph meta to only hold 'new' information for now</li>
-			<li>models are now slightly more explicit</li>
+			<li>updated mirage data</li>
+			<li>changed graph meta to only hold only 'new' information for now</li>
+			<li>models are now even more explicit</li>
 			<li>optimised Google font loading times</li>
 			<li>about now actually talks about itself</li>
+			<li class="strike-through">deprecated emberx-select; reverted to native HTML</li>
 		</ul>
 	</p>
 
@@ -54,11 +141,11 @@
 		<strong>March 09 2016</strong> - <i class="muted">EOD commit : 3323081</i>
 		<ul>
 			<li>added ember-select for drop-down selections</li>
-			<li>drops added to project</li>
-			<li>updated read function</li>
+			<li>drop-down added to project template</li>
+			<li>updated array reader function</li>
 			<li>models are now slightly more explicit</li>
-			<li>fiddle with Array calculator</li>
-			<li>added custom fonts</li>
+			<li>Array generator in early stages</li>
+			<li>added Google fonts</li>
 		</ul>
 	</p>
 
@@ -109,7 +196,7 @@
 	<p>
 	<strong>March 02 2016</strong> - <i class="muted">EOD commit : c095f93</i>
 		<ul>
-			<li>function now returning model results</li>
+			<li>function now returning result property</li>
 		</ul>
 	</p>
 
@@ -118,8 +205,8 @@
 			<ul>
 				<li>unused packages removed</li>
 				<li>search-box component added</li>
-				<li>search working and only dependent on controller now</li>
-				<li>search-box pretty, needs a little fix</li>
+				<li>search working and only dependent on controller</li>
+				<li>search-box pretty, needs some small visual fixes</li>
 				<li>updated some transition styles</li>
 				<li>updated dashboard filter</li>
 			</ul>
@@ -128,7 +215,7 @@
 	<p>
 		<strong>February 29 2016</strong> - <i class="muted">EOD commit : c155f46</i>
 		<ul>
-			<li>found jsonp documentation - will need &callback=redstone > needs to be enabled by Tyler Peters</li>
+			<li>found jsonp documentation - will need <pre>&callback=redstone</pre> > needs to be enabled by Tyler Peters</li>
 		</ul>
 		<ul>
 			<li>overflow:hidden for cards</li>
@@ -211,7 +298,7 @@
 			<li>has header</li>
 			<li>has footer</li>
 			<li>added serializer as <a href="https://guides.emberjs.com/v2.3.0/models/customizing-serializers/" target="_new">documented</a> to parse through nested objects</li>
-			<li>relations ship between issues & projects established</li>
+			<li>relationship between issues & projects established</li>
 			<li>routing full implemented</li>
 		</ul>
 	</p>
