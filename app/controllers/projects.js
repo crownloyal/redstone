@@ -3,9 +3,9 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
   	actions: {
-  		changeDayCount(value, component) {
+  		changeDayCount(value) {
   			if (value) {
-        		this.set('graphDays', value)
+        		this.set('graphDays', value);
       		}
   		}
   	}

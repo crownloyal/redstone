@@ -210,20 +210,24 @@ a .card:hover { border: 1px solid #cc0000; }
 .pattern-notebook {
 	background-image: url('pattern/notebook-dark.png')
 }
-.pattern-60d-lines {
-	background-image: url('http://transparenttextures.com/patterns/60-lines.png');
-}
 .about-pattern-arches {
-	background-image: url('http://transparenttextures.com/patterns/arches.png');
+	background-image: url('pattern/arches.png');
 }
 
 .about-ember {
-	background-image: url('http://emberjs.com/images/brand/ember_Ember-Light.png'), url('http://emberjs.com/images/tomsters/builtwith.png');
+	background-image: url('img/ember/ember_Ember-Light.png'), url('img/ember/builtwith.png');
 	background-size: 40%;
 	background-repeat: no-repeat;
 	background-position: left center, center right;
 }
-
+@media(min-width: 1100px) {
+	.tomster-teaching {
+		background-image: url('img/ember/teaching.png');
+		background-size: 30%;
+		background-repeat: no-repeat;
+		background-position: top right;
+	}
+}
 /*** FOOTER ***/
 footer img#logo {
 	max-height: 4.5rem;

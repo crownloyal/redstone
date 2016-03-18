@@ -24,6 +24,8 @@
 
 
 	<section>
+
+		{{filter-content}}
 		{{#if search}}
 			<h5>Here are the results for <strong>{{search}}</strong></h5>
 		{{else}}
@@ -31,7 +33,7 @@
 		{{/if}}
 
 		<div class="masonry">
-	    {{#each queryResults as |result index|}}
+	    {{#each queryResults key="@index" as |result index|}}
 	    	{{#link-to 'issues' result.id}}
 	        	{{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
 					{{result.subject}}
