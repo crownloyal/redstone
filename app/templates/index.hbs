@@ -18,6 +18,11 @@
 
 	<hr />
 
+		{{#each project as |project index|}}
+	    	{{project-chart model=model.project id=model.project.id}}
+	    {{/each}}
+
+
 	<section>
 		{{#if search}}
 			<h5>Here are the results for <strong>{{search}}</strong></h5>
