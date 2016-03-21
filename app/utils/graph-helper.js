@@ -19,9 +19,10 @@ export function pushTicketCount(preparedArray, array, targetIndex) {
 }
 
 export function pushDates(array, count) {
-																						//get all those dates into a nice array
-		for (var i = (count); i >= 0; i--) {											//needs to be run first
+																			//get all those dates into a nice array
+		for (var i = count; i >= 0; i--) {												//needs to be run first
 			var changingDay = moment().subtract(i, 'days').format("DD MMM");
 			array.push([changingDay, ]);
 			}
+
 }

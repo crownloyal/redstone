@@ -19,8 +19,13 @@ export default GoogleChart.extend({
 		result.unshift(label);		//add labels at the start
 		return result;
 	}).property('graphDays'),
+
 	options: {
 		legend: { position: 'bottom' },
+		series: {
+            0: { color: '#cc3232' },
+            1: { color: '#246381' } 
+        },
  		animation: {
  			startup: true,
 			duration: 600,
