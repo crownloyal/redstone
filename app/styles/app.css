@@ -27,6 +27,7 @@ nav .active { font-weight: 700; }
 		 font-size: 1.3rem; }
 textarea { min-height: 15rem; }
 .align-left { float: left; }
+.align-center { text-align: center; }
 .strike-through { text-decoration: line-through; }
 
 /*** HEADER ***/
@@ -65,8 +66,11 @@ input#datepicker { width: 6rem; }
 
 input { transition: border 0.3s; }
 .search #search-box {
+	border: none;
+	border-bottom: 1px solid #d1d1d1;
 	display: block;
-	transition: background-color 0.3s, border-color 0.3s; }
+	transition: background-color 0.3s, border-color 0.3s;
+}
 .search .inputLabel {
 	color: #d1d1d1;
 	display: block;
@@ -176,8 +180,7 @@ a .card:hover { border: 1px solid #cc0000; }
 .card .card-ticket { float: left; }
 .card .card-updated { float: right; }
 
-/*** ABOUT SECTION ***/
-
+/* ABOUT SECTION */
 .icon-punchlines { text-align: center; }
 .icon-punchlines .about-icon { font-size: 5rem; }
 .about-red {
@@ -187,8 +190,9 @@ a .card:hover { border: 1px solid #cc0000; }
 .about-red a {
 	color: #fff;
 	text-decoration: underline; }
-.about-red input, .about-red select, .about-red textarea, .about-red > button { color: #222; }
-.about-red > button:hover {
+.about-red input, .about-red select, .about-red textarea { color: #222; }
+.about-red form button { color: #fff; }
+.about-red form button:hover {
 	color: #fff;
 	border-color: #fff; }
 .about-red input:focus, .about-red select:focus, .about-red textarea:focus { border-color: #f0c5c5; }
@@ -228,7 +232,15 @@ a .card:hover { border: 1px solid #cc0000; }
 		background-position: top right;
 	}
 }
-/*** FOOTER ***/
+.tomster-loading {
+	min-height: 35rem;
+	background-image: url('img/ember/construction.png');
+	background-size: 40%;
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+/* FOOTER */
 footer img#logo {
 	max-height: 4.5rem;
 	max-width: 4.5rem;

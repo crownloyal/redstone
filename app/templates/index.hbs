@@ -4,7 +4,7 @@
 
 	<section id="dashboard" class="row">
 		<div class="two-thirds column search {{if isFocused 'input--filled' ''}}">
-			{{search-box value=search id="search-box" focus-in="focused" focus-out="checkFocused"}}
+			{{search-box value=search id="search-box" focus-in="focused" type="search" focus-out="checkFocused"}}
 			<label class="inputLabel" for="search-box" >
 				<span class="labelContent" data-content="Search">Search</span>
 			</label>
@@ -18,12 +18,18 @@
 
 	<hr />
 
-		{{#each project as |project index|}}
-	    	{{project-chart model=model.project id=model.project.id}}
-	    {{/each}}
+		{{!-- {{#each queryResults as |results index|}}
+	    	{{project-chart model=model id=model.project.id}}
+	    {{/each}} --}}
 
 
 	<section>
+
+	{{#if currentlyLoading}}
+
+		<p>{{fa-icon "fa-circle-o-notch" spin=true}} Grabbing data...</p>
+
+	{{else}}
 
 		{{#if search}}
 			<h5>Here are the results for <strong>{{search}}</strong></h5>
@@ -40,5 +46,8 @@
 			{{/link-to}}
 	    {{/each}}
 	    </div>
+
+	{{/if}}
+
 	</section>
 </div>
