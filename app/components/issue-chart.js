@@ -18,8 +18,8 @@ export default GoogleChart.extend({
 		} else {
 
 		//actually doing things
-		//pushDates(result, count);
-		//pushTicketCount(result, updateDates, 1);
+		pushDates(result, count);
+		pushTicketCount(result, updateDates, 1);
 
 		result.unshift(label);		//add labels at the start
 		return result;
