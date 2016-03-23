@@ -232,6 +232,14 @@ a .card:hover { border: 1px solid #cc0000; }
 	background-repeat: no-repeat;
 	background-position: left center, center right;
 }
+@media(max-width: 550px) {
+	.about-ember {
+	background-image: url('img/ember/ember_Ember-Light.png');
+	background-size: 40%;
+	background-repeat: no-repeat;
+	background-position: left center;
+	}
+}
 @media(min-width: 1100px) {
 	.tomster-teaching {
 		background-image: url('img/ember/teaching.png');

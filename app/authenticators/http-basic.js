@@ -1,29 +1,42 @@
 import Ember from 'ember';
-import BaseAuthenticator from 'ember-simple-auth/authenticators/base';
+import BaseAuthorizer from 'ember-simple-auth/authorizers/base';
 
-const { RSVP } = Ember;
-const { service } = Ember.inject;
+export default BaseAuthorizer.extend({
 
-export default BaseAuthenticator.extend({
+	authenticate(identification, password) {
+  		let basicAuth = btoa(`${identification}:${password}`);
+  		let headers = {
+     	Authorization: `Basic ${basicAuth}`
+    };
 
-  authenticate() {
-    return new RSVP.Promise((resolve, reject) => {
-      this._super(identification, password).then((data) => {
-        raw({
-          url:      '/issues',
-          type:     'GET',
-          dataType: 'jsonp',
-          data:     { 'grant_type': 'facebook_auth_code', 'auth_code': data.authorizationCode }
-        }).then((response) => {
-          resolve({
-            // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
-            access_token: response.access_token,
-            // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
-            provider: data.provider
-          });
-        }, reject);
-      }, reject);
-    });
-  }
+	// then make manual AJAX request to your API with `headers` added in.
+	// this can be Ember.$.ajax or the new `ember-ajax` service, etc
+	// make sure this returns a promise
+		let loginURL = 'http://redmine.mozy.lab.emc.com/issues.json';
+		let getLogin = new Ember.RSVP.Promise((resolve, reject) => {
 
+			Ember.$.ajax({
+				url: loginURL,
+				headers: `headers`,
+				dataType: 'jsonp',
+				crossDomain: true,
+				async: true,
+				method: 'GET'
+			})
+
+			if(response) {
+			   	resolve(this.response);
+			} else {
+				reject(error);
+			}
+
+			getLogin.then((response) => {
+				return 'accepted:';
+			}, (error) => {
+		 		return 'error:' + error;
+			});
+
+
+		})
+	}
 });
