@@ -120,6 +120,14 @@ input { transition: border 0.3s; }
 .search #search-box:focus + .search #search-box,
 .search .input--filled #search-box { border-color: #cc3232; }
 
+/* LOGIN */
+#login-wrapper {
+	border: 1px solid #352525;
+	padding: 2rem 4rem;
+	border-radius: 2px;
+	background: #fff
+}
+
 /* CARD GRID */
 .masonry {
 	width: 100%;
