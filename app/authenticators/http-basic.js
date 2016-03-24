@@ -3,41 +3,24 @@ import BaseAuthorizer from 'ember-simple-auth/authorizers/base';
 
 export default BaseAuthorizer.extend({
 
+
 	authenticate(identification, password) {
-  		let basicAuth = btoa(`${identification}:${password}`);
-  		let headers = {
-     	Authorization: `Basic ${basicAuth}`
-    };
+		ajax: Ember.inject.service();
 
-	// then make manual AJAX request to your API with `headers` added in.
-	// this can be Ember.$.ajax or the new `ember-ajax` service, etc
-	// make sure this returns a promise
-		let loginURL = 'http://redmine.mozy.lab.emc.com/issues.json';
-		let getLogin = function(){
-			new Ember.RSVP.Promise((resolve, reject) => {
+  		let basicAuth = btoa(`${identification}:${password}`),
+  			headers = { Authorization: `Basic ${basicAuth}` },
+			loginURL = 'http://redmine.mozy.lab.emc.com/issues.json';
 
-			Ember.$.ajax({
-				url: loginURL,
-				headers: `headers`,
-				dataType: 'jsonp',
-				crossDomain: true,
-				async: true,
-				method: 'GET'
-			})
-
-			if(resolve) {
-				return resolve;
-			} else {
-				return error;
-			}
-
-			})
+		var promise = function() {
+			return this.get('ajax').request(loginURL, {
+					headers: `headers`,
+					dataType: 'jsonp',
+					crossDomain: true,
+					async: true,
+					method: 'GET'
+				})
 		}
+		return promise;
 
-		getLogin.then((response) => {
-				return 'accepted:';
-			}, (error) => {
-				return 'error:' + error;
-			});
 	}
 });
