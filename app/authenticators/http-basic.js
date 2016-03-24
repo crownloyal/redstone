@@ -13,7 +13,8 @@ export default BaseAuthorizer.extend({
 	// this can be Ember.$.ajax or the new `ember-ajax` service, etc
 	// make sure this returns a promise
 		let loginURL = 'http://redmine.mozy.lab.emc.com/issues.json';
-		let getLogin = new Ember.RSVP.Promise((resolve, reject) => {
+		let getLogin = function(){
+			new Ember.RSVP.Promise((resolve, reject) => {
 
 			Ember.$.ajax({
 				url: loginURL,
@@ -24,19 +25,19 @@ export default BaseAuthorizer.extend({
 				method: 'GET'
 			})
 
-			if(response) {
-			   	resolve(this.response);
+			if(resolve) {
+				return resolve;
 			} else {
-				reject(error);
+				return error;
 			}
 
-			getLogin.then((response) => {
+			})
+		}
+
+		getLogin.then((response) => {
 				return 'accepted:';
 			}, (error) => {
-		 		return 'error:' + error;
+				return 'error:' + error;
 			});
-
-
-		})
 	}
 });
