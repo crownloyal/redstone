@@ -20,8 +20,8 @@ export default DS.Model.extend({
 	start_date: DS.attr('date'),
 
   //RELATIONSHIPS
-  	project: DS.belongsTo('project'),
-  	journals: DS.hasMany('journal'),
+  	project: DS.belongsTo('project', { async: true }),
+  	journals: DS.hasMany('journal', { async: true }),
 
   //CUSTOM FIELDS
   	custom_fields: DS.attr()

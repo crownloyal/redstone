@@ -6,5 +6,5 @@ export default DS.Model.extend({
 	notes: DS.attr(),
 
 	// RELATIONSHIP
-	issues: DS.belongsTo('issue')
+	issues: DS.belongsTo('issue', { async: true })
 });

@@ -6,5 +6,5 @@ export default DS.Model.extend({
   parent: DS.attr(),
 
   //RELATIONSHIP
-  issues: DS.hasMany('issue')
+  issues: DS.hasMany('issue', { async: true })
 });
