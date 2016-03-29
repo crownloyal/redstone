@@ -15,6 +15,8 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
 
 a, .red { color: #cc3232;
 		  text-decoration: none; }
+a:hover { color: #cc3232;
+		  text-decoration: underline; }
 a { transition: text-decoration 0.2s; }
 li { margin-bottom: 0.25rem; }
 ul { margin-bottom: 1.5rem; }
@@ -33,6 +35,8 @@ nav .active { font-weight: 700; }
 .muted { color: #333;
 		 font-size: 1.3rem; }
 input:focus, input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus { border: 1px solid #cc3232; }
+button[disabled], input[disabled] { color: #ccc; }
+
 textarea { min-height: 15rem; }
 .align-left { float: left; }
 .align-center { text-align: center; }
@@ -127,6 +131,10 @@ input { transition: border 0.3s; }
 .input--filled .labelContent { transform: translate3d(0, 100%, 0); }
 .search #search-box:focus + .search #search-box,
 .search .input--filled #search-box { border-color: #cc3232; }
+
+/* ASYNC BUTTONS */
+
+.async-button + .pending {  }
 
 /* LOGIN */
 #login-wrapper {

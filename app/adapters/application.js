@@ -32,6 +32,6 @@ export default DS.RESTAdapter.extend(DataAdapterMixin, {
     return hash;
   },
 
-  authorizer: 'authorizer:application'
+  // authorizer: 'authorizer:application'
 
 });
