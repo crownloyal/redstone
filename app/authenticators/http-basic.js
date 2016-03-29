@@ -43,6 +43,6 @@ export default BaseAuthorizer.extend({
 					return data;
 				});
 
-		return new Promise(promiseCall);
+		return new Ember.RSVP.Promise(promiseCall);
 	}
 });

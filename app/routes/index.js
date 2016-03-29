@@ -17,7 +17,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 			controller.set('currentlyLoading, true');
 			transition.promise.finally(function() {
 				controller.set('currentlyLoading', false);
-			})
+			});
 		}
 	}
 });
