@@ -19,8 +19,8 @@
 				{{input type="password" value=login-password id="login-password" class="u-full-width"}}
 
 				<hr />
-
-				{{async-button action=(action "authenticate") default="Login" pending="Sending..." fulfilled="Success!" rejected="Something went wrong - try again."}}
+				{{errorMessage}}<br />
+				{{async-button action=(action "authenticate") default="Login" pending="Sending..." fulfilled="Success!" rejected="Try again."}}
 			</form>
 		</div>
 	</div>
