@@ -6,7 +6,11 @@ export default Ember.Controller.extend({
 	results: function() { return this.get('model'); }.property('model'),
 	search: '',
   queryParams: ['search'],
-  queryResults: computedFilterByQuery('results.issues', ['id', 'project.name', 'status.name', 'author.name', 'subject', 'priority.name'], 'search').readOnly(),
+  queryResults: function() {
+    if(search.length > 1) {
+      return computedFilterByQuery('results.issues', ['id', 'project.name', 'status.name', 'author.name', 'subject', 'priority.name'], 'search').readOnly()
+    }
+  },
 
   isFocused: false,
   actions:{

@@ -173,15 +173,6 @@ input { transition: border 0.3s; }
 	border-radius: 2px;
 	background: #fff;
 }
-/*#login-wrapper::after{
-	position: relative;
-	display: block;
-	top: 1.25rem;
-	height: 0.5rem;
-	background: #cc3232;
-	content: '';
-	opacity: 1;
-}*/
 
 /* CARD GRID */
 .masonry {

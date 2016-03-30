@@ -11,22 +11,36 @@ export default BaseAuthorizer.extend({
 
 
 		var promiseCall = new Ember.RSVP.Promise(function(reject, resolve){
-			Ember.$.ajax(loginURL, {
+			Ember.$.jsonp({
+					url: loginURL,
 					dataType: 'jsonp',
 					crossDomain: true,
 					async: true,
 					method: 'GET',
-					timeout: 1000 * 8
+					timeout: 1000 * 8,
+					error: handleJSONPError,
+					success: handleJSONPComplete
 				});
-			}, 'Login: Attempt login');
+			}, 'Login: establish connection');
 
-	return promiseCall.then(function(data){
-		Ember.RSVP.resolve(data);
-		Ember.Logger.debug('success!');
-					}).catch(function(reason){
-		Ember.RSVP.reject(reason);
-		Ember.Logger.debug('failed!');
-	});
+		function handleJSONPComplete(xOptions, textStatus){
+			return textStatus;
+			promiseCall.reject(textStatus);
+			Ember.Logger.debug(textStatus);
+		}
+		function handleJSONPError(xOptions, textStatus){
+			return textStatus;
+			promiseCall.reject(textStatus);
+			Ember.Logger.debug(textStatus);
+		}
+
+		return promiseCall
+			.then((json, xOptions, textStatus) => {
+				promiseCall.resolve(textStatus || xOptions);
+			})
+			.catch((xOptions, textStatus) => {
+				promiseCall.reject(textStatus || xOptions);
+			});
 
 	}
 });
