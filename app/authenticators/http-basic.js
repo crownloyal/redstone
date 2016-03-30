@@ -22,10 +22,10 @@ export default BaseAuthorizer.extend({
 
 	return promiseCall.then(function(data){
 		Ember.RSVP.resolve(data);
-	 Ember.Logger.debug('success!');
+		Ember.Logger.debug('success!');
 					}).catch(function(reason){
 		Ember.RSVP.reject(reason);
-	 Ember.Logger.debug('failed!');
+		Ember.Logger.debug('failed!');
 	});
 
 	}

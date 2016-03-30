@@ -5,9 +5,39 @@ BLACK - #ccc
 **/
 
 /*** TYPO ***/
+/* Thanks EMC for blocking Google fonts - this will totally not brake most websites...
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+*/
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  src: url('fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  src: url('fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('fonts/Roboto_Slab/RobotoSlab-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-weight: bold;
+  src: url('fonts/Roboto_Slab/RobotoSlab-Bold.ttf') format('truetype');
+}
+
 
 body { font-family: 'Open Sans', sans-serif; }
 h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
@@ -141,8 +171,17 @@ input { transition: border 0.3s; }
 	border: 1px solid #352525;
 	padding: 2rem 4rem;
 	border-radius: 2px;
-	background: #fff
+	background: #fff;
 }
+/*#login-wrapper::after{
+	position: relative;
+	display: block;
+	top: 1.25rem;
+	height: 0.5rem;
+	background: #cc3232;
+	content: '';
+	opacity: 1;
+}*/
 
 /* CARD GRID */
 .masonry {
