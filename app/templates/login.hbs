@@ -2,7 +2,7 @@
 	<div class="container ">
 	<h3 class="four columns offset-by-three">Authentication</h3>
 		<div class="six columns offset-by-three" id="login-wrapper">
-			<form {{action 'authenticate' on='submit'}}>
+			<form>
 				<p>
 				{{#if login-username}}
 				Hi <strong>{{login-username}}</strong>!
@@ -19,8 +19,9 @@
 				{{input type="password" value=login-password id="login-password" class="u-full-width"}}
 
 				<hr />
-				{{errorMessage}}<br />
-				{{async-button action=(action "authenticate") default="Login" pending="Sending..." fulfilled="Success!" rejected="Try again."}}
+
+				{{async-button action=(action "authenticate") default="Login" pending="Sending..." fulfilled="Success!" rejected="Try again."}}<br />{{errorMessage}}
+
 			</form>
 		</div>
 	</div>

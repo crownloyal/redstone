@@ -10,12 +10,7 @@ export default BaseAuthorizer.extend({
 			loginURL = 'https://'+ basicAuth +'@redmine.mozy.lab.emc.com/issues.json';
 
 
-		var promise = new Ember.RSVP.Promise(function(reject, resolve){
-			promiseCall
-				.then((json, xOptions, textStatus) => {
-					Ember.RSVP.Promise.resolve(textStatus || json)
-				});
-		}, 'Login: request'),
+		var promise = this.get('promiseCall'),
 			promiseCall = Ember.$.jsonp({
 					url: loginURL,
 					dataType: 'jsonp',
@@ -27,9 +22,9 @@ export default BaseAuthorizer.extend({
 					success: handleJSONPComplete
 				});
 
-		function handleJSONPComplete(xOptions, textStatus){
+		function handleJSONPComplete(json, xOptions, textStatus){
 			return textStatus;
-			promise.reject(textStatus);
+			promise.resolve(textStatus);
 			Ember.Logger.debug(textStatus);
 		}
 		function handleJSONPError(xOptions, textStatus){
