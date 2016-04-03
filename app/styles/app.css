@@ -1,47 +1,28 @@
 /**
-COLORS:
-RED - #cc3232
-BLACK - #ccc
+@ CSS
+@ Author: Dominic Brause
+@ TYPE: Stylesheet
+@ -
+@ This is the global application stylesheet which contains all custom styles.
+@ The foundation is based on the excelent Skeleton CSS framework (http://getskeleton.com/)
+@ -
+@ COLORS:
+@ RED - #cc3232
+@ BLACK - #ccc
+@ red-ish BLACK - #352525
 **/
 
 /*** TYPO ***/
+/* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-/*
-@font-face {
-  font-family: 'Ubuntu';
-  src: url('fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Ubuntu';
-  font-weight: bold;
-  src: url('fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url('fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: bold;
-  src: url('fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Roboto Slab';
-  src: url('fonts/Roboto_Slab/RobotoSlab-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Roboto Slab';
-  font-weight: bold;
-  src: url('fonts/Roboto_Slab/RobotoSlab-Bold.ttf') format('truetype');
-}
-*/
 
 body { font-family: 'Open Sans', sans-serif; }
 h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
 #title { font-family: 'Ubuntu', sans-serif; }
 
+/* Global basics */
 a, .red { color: #cc3232;
 		  text-decoration: none; }
 a:hover { color: #cc3232;
@@ -65,11 +46,11 @@ nav .active { font-weight: 700; }
 		 font-size: 1.3rem; }
 input:focus, input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus { border: 1px solid #cc3232; }
 button[disabled], input[disabled] { color: #ccc; }
-
-textarea { min-height: 15rem; }
 .align-left { float: left; }
 .align-center { text-align: center; }
 .strike-through { text-decoration: line-through; }
+
+textarea { min-height: 15rem; }
 
 /*** HEADER ***/
 header, footer {
@@ -162,7 +143,6 @@ input { transition: border 0.3s; }
 .search .input--filled #search-box { border-color: #cc3232; }
 
 /* ASYNC BUTTONS */
-
 .async-button + .pending {  }
 
 /* LOGIN */
@@ -253,19 +233,17 @@ a .card:hover { border: 1px solid #cc0000; }
 	color: #fff;
 	background: #553535;
 }
+.note {
+	background-color: #ffffcc;
+	border: 1px solid #f9d100;
+}
 
 /*** I LOVE PATTERNS ***/
-.pattern-diamonds {
-	background-image: url('pattern/diagmonds.png')
-}
 .pattern-white-diamonds {
 	background-image: url('pattern/white-diamond-dark.png')
 }
 .pattern-small-dots {
 	background-image: url('pattern/subtle-dots.png')
-}
-.pattern-notebook {
-	background-image: url('pattern/notebook-dark.png')
 }
 .about-pattern-arches {
 	background-image: url('pattern/arches.png');
@@ -308,10 +286,4 @@ footer img#logo {
 	display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-/*** Custom Styles ***/
-.note {
-	background-color: #ffffcc;
-	border: 1px solid #f9d100;
 }

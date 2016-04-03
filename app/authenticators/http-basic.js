@@ -1,3 +1,16 @@
+/*
+@ HTTP BASIC AUTHENTICATION
+@ Author: Dominic Brause
+@ -
+@ This authentication method requests a single JSON file and injects the user credentials into the request to validate access.
+@ -
+@ Usage:
+@ - AUTHENTICATE: method receives username & password credentials from a user and runs a single REST call.
+	If the credentials are invalid, the user can not proceed.
+	If the credentials are valid, the user gains access to the tools full capabilities.
+@ - RESTORE: method restores sessions across multiple tabs
+*/
+
 import Ember from 'ember';
 import BaseAuthorizer from 'ember-simple-auth/authorizers/base';
 
@@ -13,27 +26,25 @@ export default BaseAuthorizer.extend({
 		var promise = this.get('promiseCall'),
 			promiseCall = Ember.$.jsonp({
 					url: loginURL,
+
 					dataType: 'jsonp',
+					contentType: "application/javascript",
 					crossDomain: true,
+
 					async: true,
 					method: 'GET',
 					timeout: 1000 * 8,
-					error: handleJSONPError,
-					success: handleJSONPComplete
+					error: Ember.computed(function(json, status){
+								Ember.RSVP.reject(status, 'Login failed!');
+						}),
+					success: Ember.computed(function(json, status, xOptions){
+								Ember.Logger.debug('JSONP req was successful!');
+								Ember.Logger.debug(status);
+								Ember.RSVP.resolve(xOptions, 'Login successful!');
+							})
 				});
 
-		function handleJSONPComplete(json, xOptions, textStatus){
-			return textStatus;
-			promise.resolve(textStatus);
-			Ember.Logger.debug(textStatus);
-		}
-		function handleJSONPError(xOptions, textStatus){
-			return textStatus;
-			promise.reject(textStatus);
-			Ember.Logger.debug(textStatus);
-		}
-
-		return promise;
+		return promiseCall;
 
 	}
 });

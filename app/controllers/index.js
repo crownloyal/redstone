@@ -1,9 +1,18 @@
+/*
+@ DASHBOARD CONTROLLER
+@ Author: Dominic Brause
+@ TYPE: Controller
+@ -
+@ This Controller manages dashboard actions.
+*/
+
 import Ember from 'ember';
 import computedFilterByQuery from 'ember-cli-filter-by-query';
 
 export default Ember.Controller.extend({
-  session: Ember.inject.service('session'),
 	results: function() { return this.get('model'); }.property('model'),
+
+  // Search input & adding the query to the URL
 	search: '',
   queryParams: ['search'],
   queryResults: function() {
@@ -12,6 +21,7 @@ export default Ember.Controller.extend({
     }
   },
 
+  // checks in the search field is focused
   isFocused: false,
   actions:{
     	focused(){

@@ -1,3 +1,17 @@
+/*
+@ DATA ADAPTER
+@ Author: Dominic Brause
+@ TYPE: Data Adapter
+@ -
+@ This Adapter points routers to their API host
+@ -
+@ Usage:
+@ - HOST: attribute points to the end-point hosting the API
+@ - NAMESPACE: attribute points to the location of the api, for example '/v2/api'
+@ - BUILDURL: attribute adds custom extentions to any URL, for example .json
+@ - AJAXOPTIONS: override existing REST configuration to match our JSONP requirements
+*/
+
 import DS from 'ember-data';
 import Ember from 'ember';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
