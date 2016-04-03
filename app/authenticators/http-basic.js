@@ -23,8 +23,7 @@ export default BaseAuthorizer.extend({
 			loginURL = 'https://'+ basicAuth +'@redmine.mozy.lab.emc.com/issues.json';
 
 
-		var promise = this.get('promiseCall'),
-			promiseCall = Ember.$.jsonp({
+		var promiseCall = Ember.$.jsonp({
 					url: loginURL,
 
 					dataType: 'jsonp',

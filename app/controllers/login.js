@@ -20,12 +20,12 @@ export default Ember.Controller.extend({
       		var identification = this.get('login-username'),
               password = this.get('login-password');
 
-      		this.get('session').authenticate('authenticator:http-basic', identification, password)
+      		this.get('session', 'Send Credentials').authenticate('authenticator:http-basic', identification, password)
       			.then((data) => {
       				Ember.Logger.debug('success!');
               Ember.RSVP.resolve('success!', 'Login successful!');
       		  }).catch((reason) => {
-        			this.set('errorMessage', 'Credentials incorrect! - ' + reason.error);
+        			this.set('errorMessage', 'Credentials incorrect! - ' + reason.error || reason);
               Ember.RSVP.reject(status, 'Credentials incorrect!');
       		  });
       	}

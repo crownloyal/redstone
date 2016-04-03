@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
   queryParams: ['search'],
   queryResults: function() {
     if(search.length > 1) {
-      return computedFilterByQuery('results.issues', ['id', 'project.name', 'status.name', 'author.name', 'subject', 'priority.name'], 'search').readOnly()
+      return computedFilterByQuery('results.issues', ['id', 'project.name', 'status.name', 'author.name', 'subject', 'priority.name'], 'search').readOnly();
     }
   },
 
