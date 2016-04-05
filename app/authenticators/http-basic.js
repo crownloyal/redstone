@@ -33,6 +33,7 @@ export default BaseAuthorizer.extend({
 					async: true,
 					method: 'GET',
 					timeout: 1000 * 8,
+
 					error: Ember.computed(function(json, status){
 								Ember.RSVP.reject(status, 'Login failed!');
 						}),
