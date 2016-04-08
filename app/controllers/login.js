@@ -17,14 +17,7 @@ export default Ember.Controller.extend({
 	session: Ember.inject.service('session'),
 
   loginButtonState: 'Login',
-  disableToggle: Ember.computed('loginButtonState', function(){
-    var buttonState = this.get('loginButtonState');
-    if(buttonState === 'Sending') {
-      this.set('disableToggle', true);
-    } else {
-      this.set('disableToggle', false);
-    }
-  }),
+  disableToggle: false,
 
   actions: {
     	authenticate() {
@@ -32,17 +25,22 @@ export default Ember.Controller.extend({
               password = this.get('login-password');
 
           this.set('errorMessage', '');
+          this.toggleProperty('disableToggle');
           this.set('loginButtonState', 'Sending');
 
       		this.get('session', 'Send Credentials').authenticate('authenticator:http-basic', identification, password)
       			.then((data) => {
-      				Ember.Logger.debug('success!');
               Ember.RSVP.resolve('success!', 'Login successful!');
-      		  }).catch((reason) => {
-              Ember.RSVP.reject(status, 'Credentials incorrect!');
-        			this.set('errorMessage', 'Credentials incorrect! - ' + reason.error || reason);
+      		  })
+            .fail((reason) => {
+              Ember.RSVP.reject(reason.status, 'Credentials incorrect!');
+
               this.set('loginButtonState', 'Try again');
-      		  });
+        			this.set('errorMessage', 'Credentials incorrect!');
+      		  })
+            .always(() => {
+              this.toggleProperty('disableToggle');
+            });
       	}
 }
 

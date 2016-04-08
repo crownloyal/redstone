@@ -23,7 +23,7 @@ export default BaseAuthorizer.extend({
 			loginURL = 'https://'+ basicAuth +'@redmine.mozy.lab.emc.com/issues.json';
 
 
-		var promiseCall = Ember.$.jsonp({
+		var promiseCall = Ember.$.ajax({
 					url: loginURL,
 
 					dataType: 'jsonp',
@@ -33,18 +33,13 @@ export default BaseAuthorizer.extend({
 					async: true,
 					method: 'GET',
 					timeout: 1000 * 8,
-
-					error: Ember.computed(function(json, status){
-								Ember.RSVP.reject(status, 'Login failed!');
-						}),
-					success: Ember.computed(function(json, status, xOptions){
-								Ember.Logger.debug('JSONP req was successful!');
-								Ember.Logger.debug(status);
-								Ember.RSVP.resolve(xOptions, 'Login successful!');
-							})
 				});
 
-		return promiseCall;
+		return promiseCall.fail(function(json, status){
+								return Ember.RSVP.reject(json, 'Login failed!');
+						}).then(function(json, status, xOptions){
+								return Ember.RSVP.resolve(status, 'Login successful!');
+							});
 
 	}
 });
