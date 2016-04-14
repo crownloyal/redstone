@@ -15,11 +15,7 @@ export default Ember.Controller.extend({
   // Search input & adding the query to the URL
 	search: '',
   queryParams: ['search'],
-  queryResults: function() {
-    if(search.length > 1) {
-      return computedFilterByQuery('results.issues', ['id', 'project.name', 'status.name', 'author.name', 'subject', 'priority.name'], 'search').readOnly();
-    }
-  },
+  queryResults: computedFilterByQuery('results.issues', ['id', 'project.name', 'status.name', 'author.name', 'subject', 'priority.name'], 'search').readOnly(),
 
   // checks in the search field is focused
   isFocused: false,

@@ -44,7 +44,7 @@ nav .active { font-weight: 700; }
 .rightAligned { float: right; }
 .muted { color: #333;
 		 font-size: 1.3rem; }
-input:focus, input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus { border: 1px solid #cc3232; }
+input:focus, input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus, select:focus { border: 1px solid #cc3232; }
 button[disabled], input[disabled] { color: #ccc; }
 .align-left { float: left; }
 .align-center { text-align: center; }

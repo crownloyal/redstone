@@ -31,15 +31,14 @@
 	<h5>Activity</h5>
 
 	{{#if issueActivity}}
-		{{issueActivity}}
 		{{issue-chart model=model.issues}}
 	{{else}}
-	<p>There was no activity on this ticket</p>
+		<p>There was no activity on this ticket</p>
 	{{/if}}
 
-	{{#each-in model.journals as |journals|}}
+{{!-- 	{{#each-in model.journals as |journals|}}
 	    {{model.journals.user.name}}: {{moment-format model.journals.created_on}}<br/>
 	{{else}}
 		<p>There was no activity.</p>
-	{{/each-in}}
+	{{/each-in}} --}}
 </div>

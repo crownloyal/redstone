@@ -7,15 +7,18 @@ import { pushTicketCount } from '../utils/graph-helper';
 export default GoogleChart.extend({
 
 	issueActivity: Ember.computed('model', function() {
-		var label = ['Date', 'Updated'],
-			startDates = this.get('model').get('created_on'),
-			updateDates = this.get('model').get('updated_on'),
-			count = moment().subtract(startDates, 'days'),
+		let label = ['Date', 'Updated'],
+			startDates = this.get('model.created_on'),
+			updateDates = this.get('model.updated_on'),
+			count = moment().diff(startDates, 'days'),
 			result = [];
 
-		if(typeof count !== 'number' || count < 0) {							//catching endless loop
-			return false;
-		} else {
+		Ember.Logger.debug(startDates);
+		Ember.Logger.debug(count);
+
+		if(count < 0) {							//catching endless loop
+			count = count * -1;
+		}
 
 		//actually doing things
 		pushDates(result, count);
@@ -23,7 +26,6 @@ export default GoogleChart.extend({
 
 		result.unshift(label);		//add labels at the start
 		return result;
-		}
 	}),
 
 	options: {
