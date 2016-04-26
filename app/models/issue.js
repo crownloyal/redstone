@@ -10,9 +10,9 @@ export default DS.Model.extend({
 	updated_on: DS.attr('date'),
 
   //TIER II
-	author: DS.attr(),
+	author: DS.belongsTo('user', { async: false }),
 	category: DS.attr(),
-	assigned_to: DS.attr(),
+	assigned_to: DS.belongsTo('user', { async: false }),
 	priority: DS.attr(),
 
   //TIER III

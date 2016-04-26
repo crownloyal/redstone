@@ -12,7 +12,9 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	attrs: {
 		project: { embedded: 'always' },
 		journals: { embedded: 'always' },
-		custom_fields: {embedded: 'always'}
+		custom_fields: { embedded: 'always' },
+		assigned_to: { embedded: 'always' },
+		author: { embedded: 'always' }
 	},
 
 	extractMeta: function(store, typeClass, payload) {

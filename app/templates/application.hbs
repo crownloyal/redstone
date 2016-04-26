@@ -7,7 +7,7 @@
 
 			<nav class="one-third column row">
 				{{#if session.isAuthenticated}}
-					{{link-to 'Dashboard' 'index' class='one-half column'}}
+					{{link-to 'Dashboard' 'index' class='one-third column'}}
 					{{link-to 'About' 'about' class='one-third column'}}
 	    			<a {{action 'invalidateSession'}} class="one-third column">Logout</a>
     			{{else}}

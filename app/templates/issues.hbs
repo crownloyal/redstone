@@ -7,17 +7,26 @@
 		<div class="one-half column">
 			<p>
 			<strong>Ticket #</strong> {{model.issues.id}}<br />
-			<strong>Project:</strong> {{#link-to 'projects' model.issues.project.id}}{{model.issues.project.name}}{{/link-to}}<br />
+			<strong>Project:</strong>
+			{{#link-to 'projects' model.issues.project.id}}
+			{{model.issues.project.name}}
+			{{/link-to}}<br />
 			<strong>Tracker:</strong> {{model.issues.tracker.name}}<br />
 			<strong>Priority:</strong> {{model.issues.priority.name}}<br />
-			<strong>Author:</strong> {{model.issues.author.name}}
+			<strong>Author:</strong>
+			{{#link-to 'users' model.issues.author.id}}
+			{{model.issues.author.name}}
+			{{/link-to}}
 			</p>
 		</div>
 		<div class="one-half column">
 			<strong>Status:</strong> {{model.issues.status.name}}<br />
 			<strong>Last updated:</strong> {{moment-from-now model.issues.updated_on}}<br />
 			<strong>Created:</strong> {{moment-format model.issues.created_on 'LL'}}<br /><br />
-			<strong>Assigned to:</strong> {{model.issues.assigned_to.name}}
+			<strong>Assigned to:</strong>
+			{{#link-to 'users' model.issues.assigned_to.id}}
+			{{model.issues.assigned_to.name}}
+			{{/link-to}}
 		</div>
 	</section>
 

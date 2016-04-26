@@ -1,0 +1,8 @@
+<div class="container">
+	<h3>{{model.firstname}} {{model.lastname}}</h3>
+
+	<p>
+		Mail: {{model.mail}}<br />
+		Last activity: {{moment-from-now model.last_login_on}}
+	</p>
+</div>

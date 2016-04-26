@@ -11,7 +11,7 @@
 		</div>
 		<div class="one-third column">
 			<p class="note card">
-				The search allows you to look through issues and projects - ultimately enableling you too add multiple ones and to generate an activity graph.
+				The search allows you to look through issues and projects - ultimately enabling you too add multiple ones and to generate an activity graph.
 			</p>
 		</div>
 	</section>
@@ -33,12 +33,13 @@
 
 		{{#if search}}
 			<h5>Here are the results for <strong>{{search}}</strong></h5>
+			<p>Displaying {{queryResults.length}} results</p>
 		{{else}}
 			<h5>Latest tickets:</h5>
 		{{/if}}
 
 		<div class="masonry">
-	    {{#each queryResults key="@index" as |result index|}}
+	    {{#each queryResults as |result index|}}
 	    	{{#link-to 'issues' result.id}}
 	        	{{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
 					{{result.subject}}

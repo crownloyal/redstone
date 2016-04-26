@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
       		this.set('isFocused', true);
     	},
     	checkFocused(){
-    		var element = '#search-box',
+    		let element = '#search-box',
     		    qElement = Ember.$(element);
 
     		if(qElement.val() === ''){

@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('projects', { path: 'project/:id'});
 
   this.route('404', { path: '*path'});
+  this.route('users', { path: 'user/:id'});
 });
 
 export default Router;
