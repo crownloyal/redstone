@@ -10,9 +10,7 @@ export default DS.Model.extend({
 	updated_on: DS.attr('date'),
 
   //TIER II
-	author: DS.belongsTo('user', { async: false }),
 	category: DS.attr(),
-	assigned_to: DS.belongsTo('user', { async: false }),
 	priority: DS.attr(),
 
   //TIER III
@@ -20,6 +18,8 @@ export default DS.Model.extend({
 	start_date: DS.attr('date'),
 
   //RELATIONSHIPS
+  	author: DS.attr(),
+  	assigned_to: DS.belongsTo('user', { async: false }),
   	project: DS.belongsTo('project', { async: true }),
   	journals: DS.hasMany('journal', { async: true }),
 

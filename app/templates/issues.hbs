@@ -24,9 +24,13 @@
 			<strong>Last updated:</strong> {{moment-from-now model.issues.updated_on}}<br />
 			<strong>Created:</strong> {{moment-format model.issues.created_on 'LL'}}<br /><br />
 			<strong>Assigned to:</strong>
-			{{#link-to 'users' model.issues.assigned_to.id}}
-			{{model.issues.assigned_to.name}}
-			{{/link-to}}
+			{{#if model.issues.assigned_to}}
+				{{#link-to 'users' model.issues.assigned_to.id}}
+				{{model.issues.assigned_to.name}}
+				{{/link-to}}
+			{{else}}
+				No person assigned
+			{{/if}}
 		</div>
 	</section>
 
