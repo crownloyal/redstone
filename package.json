@@ -19,6 +19,7 @@
   "author": "Dominic Brause",
   "license": "MIT",
   "devDependencies": {
+    "bower": "^1.7.9",
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "0.7.1",
     "ember-async-button": "git+https://github.com/DockYard/ember-async-button.git#7ecc1418c6ac0603eafdf2d8ceca3eeb54f5f39f",
@@ -45,8 +46,9 @@
     "ember-load-initializers": "^0.5.1",
     "ember-moment": "6.0.0",
     "ember-resolver": "^2.0.3",
-    "ember-simple-auth": "1.1.0-beta.4",
+    "ember-simple-auth": "1.1.0-beta.5",
     "emberx-select": "2.1.0",
+    "graceful-fs": "^4.1.4",
     "loader.js": "^4.0.1",
     "moment": "2.11.2",
     "moment-timezone": "0.5.0"

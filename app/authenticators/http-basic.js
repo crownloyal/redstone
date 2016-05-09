@@ -16,7 +16,9 @@ import BaseAuthorizer from 'ember-simple-auth/authorizers/base';
 
 export default BaseAuthorizer.extend({
 
-	restore(data){},
+	restore(){
+		return RSVP.resolve(data);
+	},
 	authenticate(identification, password) {
 
   		let basicAuth = `${identification}:${password}`,

@@ -8,7 +8,7 @@
 @ Usage:
 @ - HOST: attribute points to the end-point hosting the API
 @ - NAMESPACE: attribute points to the location of the api, for example '/v2/api'
-@ - BUILDURL: attribute adds custom extentions to any URL, for example .json
+@ - BUILDURL: attribute adds custom extentions to any URL, for example '.json' 
 @ - AJAXOPTIONS: override existing REST configuration to match our JSONP requirements
 */
 
