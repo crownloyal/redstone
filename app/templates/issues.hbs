@@ -26,7 +26,7 @@
 			<strong>Assigned to:</strong>
 			{{#if model.issues.assigned_to}}
 				{{#link-to 'users' model.issues.assigned_to.id}}
-				{{model.issues.assigned_to.name}}
+				{{model.issues.assigned_to.firstname}} {{model.issues.assigned_to.lastname}} Link
 				{{/link-to}}
 			{{else}}
 				No person assigned

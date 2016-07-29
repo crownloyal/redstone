@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   //ISSUE META TIER I
-  	//ID is parsed automatically
+  //ID is parsed automatically
 	status: DS.attr(),
 	subject: DS.attr('string'),
 	description: DS.attr('string'),
@@ -19,7 +19,7 @@ export default DS.Model.extend({
 
   //RELATIONSHIPS
   	author: DS.attr(),
-  	assigned_to: DS.belongsTo('user', { async: false }),
+  	assigned_to: DS.belongsTo('user', { async: true }),
   	project: DS.belongsTo('project', { async: true }),
   	journals: DS.hasMany('journal', { async: true }),
 

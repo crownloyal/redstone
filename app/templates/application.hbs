@@ -1,19 +1,19 @@
 	<header class="row">
 		<div class="container">
-			<span class="two-thirds column">
+			<span class="one-half column">
 				<h2 id="title"><strong class="red">Red</strong>stone</h2>
 				<!-- span id="tagline" class="two columns">- Redmine tracking fast forward</span-->
 			</span>
 
-			<nav class="one-third column row">
-				{{#if session.isAuthenticated}}
-					{{link-to 'Dashboard' 'index' class='one-third column'}}
-					{{link-to 'About' 'about' class='one-third column'}}
-	    			<a {{action 'invalidateSession'}} class="one-third column">Logout</a>
-    			{{else}}
+			<nav class="one-half column row">
+				{{!-- {{#if session.isAuthenticated}} --}}
+					{{link-to 'Dashboard' 'index' class='menu-fix columns'}}
+					{{link-to 'About' 'about' class='menu-fix columns'}}
+	    			<a onclick={{action 'invalidateSession'}} class="menu-fix columns">Logout</a>
+    			{{!-- {{else}}
     				{{link-to 'About' 'about' class='one-third column'}}
     				{{link-to 'Login' 'login' class='one-third column'}}
-  				{{/if}}
+  				{{/if}} --}}
 			</nav>
 		</div>
 	</header>

@@ -4,7 +4,7 @@
 @ TYPE: Stylesheet
 @ -
 @ This is the global application stylesheet which contains all custom styles.
-@ The foundation is based on the excelent Skeleton CSS framework (http://getskeleton.com/)
+@ The foundation is based on the excellent Skeleton CSS framework (http://getskeleton.com/)
 @ -
 @ COLORS:
 @ RED - #cc3232
@@ -79,6 +79,13 @@ header .column:first-child { margin-right: 0; }		/*** fixing stupid alignments -
 
 nav { padding: 1rem 0;
 	  height: 2rem; }
+@media(min-width: 850px) {
+	nav .menu-fix.columns { width: 28%; }
+}
+@media(min-width: 550px) {
+	nav .menu-fix.columns { width: 24%; }
+}
+
 
 /*** CONTENT AREA ***/
 /* SEARCH ANIMATION */

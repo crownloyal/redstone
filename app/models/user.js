@@ -7,6 +7,6 @@ export default DS.Model.extend({
 
   last_login_on: DS.attr('date'),
 
-  issues: DS.hasMany('issue', { async: false })
+  issues: DS.hasMany('issue')
 
 });
