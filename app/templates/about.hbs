@@ -1,12 +1,406 @@
-<p class="intro">
-	We were wondering what engineering is actually doing all day, so we thought we create a webpage which tracks all changes which are all on the engineering project in REDMINE
-</p>
+<section class="about-white">
+	<div class="container">
+	<h3>Ember Redstone Project</h3>
 
-<p>
-	<strong class="red">Red</strong>stone stats tool created by Stefan Ludwig & Dominic Brause.
-</p>
+	<h4>Story and idea of this Project</h4>
 
-<p>
-	Got some ideas you would like to see implemented? - <br />
-	<a href="mailto:dominic.brause@emc.com">Drop me an email</a> and let's see what we can do.
-</p>
+	<p><i>Once upon a time...</i><br />
+	<i>Redmine, an with evil enriched monster from ancient times, threatened the joined kingdom of decionmaking and avoided disaster. Therefore the king seeked out for brave code warriors who would bring piece to the land and the people.</i></p>
+
+	<p>Redstone provides real-time analytical models for <strong>Mozy Redmine</strong> activity. Based on Redmine's current reporting and analysis capabilities, stakeholders can not <i>easily</i> track activity patterns and based on external variables.</p>
+
+	<p>Therefore we developed a user-facing web app which pulls Redmine's data and manages it by activity. You are able to look for certain tags and combine them to create custom graphs.</p>
+
+	<section class="row icon-punchlines">
+		<div class="one-third column">
+			<span class="about-icon">{{fa-icon 'fa-clock-o'}}</span>
+			<p>Instant updates</p>
+		</div>
+
+		<div class="one-third column">
+			<span class="about-icon">{{fa-icon 'fa-tasks'}}</span>
+			<p>Manage progress</p>
+		</div>
+
+		<div class="one-third column">
+			<span class="about-icon">{{fa-icon 'fa-trophy'}}</span>
+			<p>Achieve success</p>
+		</div>
+	</section>
+
+	</div>
+</section>
+
+<section class="about-red about-ember">
+	<div class="container">
+		<h4>Built with Ember!</h4>
+
+		<div class="row">
+			<div class="two-thirds column">
+				<p>Ember.js or simply Ember is a Javascript MVVC framework, delivering a "convention over configuration" approach for what they call "ambitious web apps".</p>
+
+				<p>The basic main advantage over all the other fancy frameworks out there are fixed rules and ideas on how to build applications. Questions about how to structure your code and where to store application state and data have been ask relentless times in the past; with Ember.js those are already answered as it is heavily opinionated.<br />
+				Obviously, at the beginning, you will need some to learn the basics but progressingly you will start to appreciate that you can actually take action building the app instead of architecting it.</p>
+
+				<p>If you want to read an ingenious sales pitch - have a look on <a href="http://brewhouse.io/blog/2015/05/13/emberjs-an-antidote-to-your-hype-fatigue.html">Brewhouse's blog</a> which gives you an in-depth look into the problems we face on a day-to-day basis as a Javascript engineer.</p>
+
+				<p>To get some examples on the potential Ember has, please have a look at <a href="http://builtwithember.io/">builtwithember.io</a>.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="about-black pattern-white-diamonds">
+	<div class="container">
+		<h4>Where does the data come from?</h4>
+
+		<section class="row icon-punchlines">
+			<div class="one-third column">
+				<span class="about-icon">{{fa-icon 'fa-database'}}</span>
+				<p>Redmine Database</p>
+			</div>
+
+			<div class="one-third column">
+				<span class="about-icon">{{fa-icon 'fa-terminal'}}</span>
+				<p>REST API</p>
+			</div>
+
+			<div class="one-third column">
+				<span class="about-icon">{{fa-icon 'fa-area-chart'}}</span>
+				<p>Draw fancy graphs</p>
+			</div>
+
+			<p>
+				The data is coming from the only source of truth - the production REDMINE database itself. It exposes a REST API which we can use to get <strong>live</strong> data. All changes and updates in Redmine will instantly reflect here.
+			</p>
+
+		</section>
+
+	</div>
+</section>
+
+<section class="about-white">
+	<div class="container">
+	<h4>Changelog</h4>
+
+	<p>
+		<strong>March 23 2016</strong> - <i class="muted">EOD commit : 287414d</i>
+		<ul>
+			<li>added login route</li>
+			<li>added login template</li>
+			<li>added HTTP Basic authentication logic</li>
+			<li>injected session service</li>
+			<li>separated application from REST calls</li>
+			<li>locked down routes which require authentication</li>
+			<li>http-basic now returns a promise</li>
+
+			<li>about template now mobile friendly</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 22 2016</strong> - <i class="muted">EOD commit : 2b0d762</i>
+		<ul>
+			<li>full jsonp support implemented</li>
+			<li>request performance increased</li>
+			<li>application now creates controller check for promise state</li>
+
+			<li>added loading template</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 21 2016</strong> - <i class="muted">EOD commit : dad913e</i>
+		<ul>
+			<li>revisited chart requirements</li>
+			<li>graph styling</li>
+			<li>typos</li>
+
+			<li>added jsonp logic to adapter</li>
+			<li>reconfigured jsonp adapter</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 18 2016</strong> - <i class="muted">EOD commit : 58f59ec</i>
+		<ul>
+			<li>added 404 template</li>
+			<li>transferred charts in individual components</li>
+			<li>cleaned up projects controller</li>
+			<li>added controller observer</li>
+			<li>added static assets</li>
+			<li>updated dependencies</li>
+			<li>issue model now pulled correctly into the issue-graph</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 17 2016</strong> - <i class="muted">EOD commit : a54e5ef</i>
+		<ul>
+			<li>finished about template</li>
+			<li>projects graph doesn't refresh as controllers are not refreshing their own state - need to introduce component based state</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 16 2016</strong> - <i class="muted">EOD commit : 036e698</i>
+		<ul>
+			<li>changed base color to <strong class="red">#cc3232</strong> which is easier on the eyes</li>
+			<li>created graph utility for global function access</li>
+			<li>changed application layout to manage flexible content colors</li>
+			<li>changed about template layout</li>
+			<li>optimization for first headings in issue template</li>
+			<li>added bunch of backgrounds for about.hbs</li>
+			<li>charts now bound to selective property</li>
+			<li>issues render graph according to their start date</li>
+			<li>issue graph needs fix</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 14 2016</strong> - <i class="muted">EOD commit : 42bbe33</i>
+		<ul>
+			<li>fixed card CSS styles</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 13 2016</strong> - <i class="muted">EOD commit : 9f6ef15</i>
+		<ul>
+			<li>refactored the functions in projects controller to work independently</li>
+			<li>updated readme</li>
+			<li>merged multiple instances of readme</li>
+			<li>micro functions for graph functionality nw</li>
+			<li>updated about template</li>
+			<li>graph function now returns arrays with correct target index</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 11 2016</strong> - <i class="muted">EOD commit : fa65c60</i>
+		<ul>
+			<li>added priority to search</li>
+			<li>fixed missing day item</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 10 2016</strong> - <i class="muted">EOD commit : 3323081</i>
+		<ul>
+			<li>updated mirage data</li>
+			<li>changed graph meta to only hold only 'new' information for now</li>
+			<li>models are now even more explicit</li>
+			<li>optimised Google font loading times</li>
+			<li>about now actually talks about itself</li>
+			<li class="strike-through">deprecated emberx-select; reverted to native HTML</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 09 2016</strong> - <i class="muted">EOD commit : 3323081</i>
+		<ul>
+			<li>added ember-select for drop-down selections</li>
+			<li>drop-down added to project template</li>
+			<li>updated array reader function</li>
+			<li>models are now slightly more explicit</li>
+			<li>Array generator in early stages</li>
+			<li>added Google fonts</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 08 2016 </strong> - <i class="muted">EOD commit : 1c3072f</i>
+		<ul>
+			<li>added ember-simple-auth to manage user authentication</li>
+			<li>injecting session into application controller</li>
+			<li>added jsonp callback to adapter</li>
+			<li>using moments to render date array</li>
+			<li>sacrificed card text overflow for pretty animations</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 07 2016</strong> - <i class="muted">EOD commit : 2a0a1c9</i>
+		<ul>
+			<li>added readme.md</li>
+			<li>figured model enumerables to parse through model data</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 04 2016</strong> - <i class="muted">EOD commit : dffcdcf</i>
+		<ul>
+			<li>updated to ember 2.4.0</li>
+			<li>added journal as it's own model</li>
+			<li>linking based on last commit works flawless</li>
+			<li>introduced bug as I am looking for nested properties with @each to get my journals [test only pass as 55/61]</li>
+			<li>started implementing project graph</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 03 2016</strong> - <i class="muted">EOD commit : 4df0e4f</i>
+		<ul>
+			<li>fixed dependencies</li>
+			<li>fixed controller model setups</li>
+			<li>updated today's tickets in mirage</li>
+			<li>masonry layout for cards implemented</li>
+			<li>dashboard and project pages transferred to masonry</li>
+			<li>card template adapted to masonry</li>
+			<li>adjusted masonry for Firefox</li>
+			<li>journals have their own model</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>March 02 2016</strong> - <i class="muted">EOD commit : c095f93</i>
+		<ul>
+			<li>function now returning result property</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>March 01 2016</strong> - <i class="muted">EOD commit : e3a9099</i>
+			<ul>
+				<li>unused packages removed</li>
+				<li>search-box component added</li>
+				<li>search working and only dependent on controller</li>
+				<li>search-box pretty, needs some small visual fixes</li>
+				<li>updated some transition styles</li>
+				<li>updated dashboard filter</li>
+			</ul>
+	</p>
+
+	<p>
+		<strong>February 29 2016</strong> - <i class="muted">EOD commit : c155f46</i>
+		<ul>
+			<li>found jsonp documentation - will need <pre>&callback=redstone</pre> > needs to be enabled by Tyler Peters</li>
+		</ul>
+		<ul>
+			<li>overflow:hidden for cards</li>
+			<li>added custom fields to issue model</li>
+			<li>added custom field serializer</li>
+		</ul>
+	</p>
+
+	<p>
+		<strong>February 28 2016</strong> - <i class="muted">EOD commit : f5a8bo5</i>
+		<ul>
+			<li>added project serializer for parent relationship</li>
+			<li>added parent attribute to project model</li>
+			<li>projects template show parent project if it exists</li>
+		</ul>
+		<ul>
+			<li>index controller knows about search</li>
+			<li>changed issue controller to look for content instead of model to avoid confusion</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>February 27 2016</strong> - <i class="muted">EOD commit : e3dde24</i>
+		<ul>
+			<li>added card-component</li>
+			<li>added card styles</li>
+			<li>added font-awesome</li>
+			<li>changed RedStone title to 'Redstone'</li>
+			<li>did something about parsing the journals</li>
+			<li>added some more animations for the cards</li>
+			<li>did some change in 'about' template</li>
+			<li>added card view to projects</li>
+			<li>modified the really simple looking project view</li>
+			<li>experiment further with search</li>
+		</ul>
+		<ul>
+			<li>model manager for graph implemented</li>
+			<li>navigation now looking pristine</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>February 25 2016</strong> - <i class="muted">EOD commit : 3e3e0a9</i>
+		<ul>
+			Dependencies added:
+			<li>ember-cli-filter-component</li>
+			<li>ember-google-charts</li>
+		</ul>
+		<ul>
+			<li>added journal support for issues</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>February 24 2016</strong> - <i class="muted">EOD commit : b78b8dc</i>
+		<ul>
+			<li>added models object properties</li>
+			<li>model relationship tests successful</li>
+			<li>implemented REST Adapter</li>
+			<li>using ember-cli mirage for fixture data now</li>
+			<li><strong class="red">!</strong> Redmine API limitation - only returns 100 items; need to think about that another time</li>
+			<li><strong class="red">!</strong> Redmine doesn't support CORS header; yay - thanks Redmine!</li>
+		</ul>
+		<ul>
+			<li>injected Skeleton CSS framework for grid bliss</li>
+			<li>footer section now slightly less ugly</li>
+			<li>header is pretty</li>
+			<li>templating changed</li>
+			<li>index route is now called dashboard</li>
+			<li>issue & project requests are now returning a single promise</li>
+			<li>dashboard performance doubled (rough estimate)</li>
+		</ul>
+	</p>
+
+	<p>
+	<strong>February 23 2016</strong> - <i class="muted">EOD commit : ae60154</i>
+		<ul>
+			<li>using fixture data to simulate REST response</li>
+			<li>index template lists all items returned</li>
+			<li>added header</li>
+			<li>added footer</li>
+			<li>added serializer as <a href="https://guides.emberjs.com/v2.3.0/models/customizing-serializers/" target="_new">documented</a> to parse through nested objects</li>
+			<li>relationship between issues & projects established</li>
+			<li>routing fully implemented</li>
+		</ul>
+	</p>
+	<p>
+	<strong>February 19 2016</strong>
+		<ul>
+			<li>Ember.js framework set</li>
+			<li>First model blue prints</li>
+		</ul>
+	</p>
+	</div>
+</section>
+
+<section class="about-red about-pattern-arches">
+	<div class="container">
+		<p>
+			Got some ideas you would like to see implemented? - <br />
+			Drop me an email and let's see what we can do.
+		</p>
+
+		<form>
+			<div class="row">
+				<div class="six columns">
+					<label for="email">Your email</label>
+					{{input class="u-full-width" id="email" type="email" placeholder="hello@emc.com"}}
+				</div>
+				<div class="six columns">
+					<label for="reason">Reason for contacting</label>
+					{{#x-select class="u-full-width" id="reason "action="daySelector" default="Questions"}}
+						{{#x-option value="Questions"}}Questions{{/x-option}}
+						{{#x-option value="Ideas"}}Ideas{{/x-option}}
+						{{#x-option value="phone number"}}Can I get your number?{{/x-option}}
+					{{/x-select}}
+				</div>
+			</div>
+			<label for="message">Message</label>
+			<textarea id="message" class="u-full-width" placeholder="Hi Dominic..."></textarea>
+			<label>
+				<input type="checkbox">
+				<span>Send a copy to yourself</span>
+			</label>
+			<button type="submit">Submit</button>
+		</form>
+
+	</div>
+</section>

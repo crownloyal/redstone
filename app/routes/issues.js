@@ -1,7 +1,12 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(/** AuthenticatedRouteMixin,**/ {
 	model(params) {
-		return this.store.peekRecord('issue', params.id);
+			return Ember.RSVP.hash({
+			issues: this.store.findRecord('issue', params.id),
+			journals: this.store.peekRecord('journal')
+		});
+
 	}
 });

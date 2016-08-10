@@ -1,0 +1,29 @@
+<div class="container">
+	<h3>{{model.firstname}} {{model.lastname}}</h3>
+
+	<p>
+		Mail: {{model.mail}}<br />
+		Last activity: {{moment-from-now model.last_login_on}}
+	</p>
+
+	<hr />
+
+	<p><strong>Issues associated with this user:</strong></p>
+
+		<div class="masonry">
+			{{#each model.issues as |issues|}}
+				{{#link-to 'issues' issues.id}}
+					{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
+						{{issues.subject}}
+					{{/issue-detail-card}}
+				{{/link-to}}
+			{{else}}
+				<p>This user was not active.</p>
+			{{/each}}
+
+			{{#each model as |projects|}}
+				{{model.parent.name}}
+			{{/each}}
+		</div>
+
+</div>

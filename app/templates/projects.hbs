@@ -1,14 +1,50 @@
-<p><strong>Project #</strong> {{model.id}}<br />
-<strong>Project:</strong> {{model.name}}<br />
+<div class="container">
 
-<hr />
+	<h3>Project {{model.name}}</h3>
 
-<strong>Issues related:</strong></p>
+	<p>
+	<strong>Project #</strong> {{model.id}}<br />
+	{{#if model.parent}}
+	<strong>Parent Project</strong> {{#link-to 'projects' model.parent.id}}{{model.parent.name}}{{/link-to}}
+	{{/if}}
+	</p>
 
-	{{#each model.issues as |issues|}}
-		<ul>
-			<li>{{#link-to 'issues' issues}}{{issues.id}} - {{issues.subject}}{{/link-to}}</li>
-		</ul>
-	{{else}}
-		<p>There are no issues in this project</p>
-	{{/each}}
+	<hr />
+
+	<h5>Activity</h5>
+
+	<p>
+		Check activity over the past
+
+		{{#x-select value=graphDays action="changeDayCount" default=14}}
+			{{#x-option value=7}}07{{/x-option}}
+			{{#x-option value=14}}14{{/x-option}}
+			{{#x-option value=30}}30{{/x-option}}
+			{{#x-option value=90}}90{{/x-option}}
+		{{/x-select}}
+
+		 days.
+	</p>
+
+	{{project-chart model=model graphDays=graphDays}}
+
+	<hr />
+
+	<p><strong>Issues in this project:</strong></p>
+
+		<div class="masonry">
+			{{#each model.issues as |issues|}}
+				{{#link-to 'issues' issues.id}}
+					{{#issue-detail-card id=issues.id updated=issues.updated_on projectid=issues.project.id project=issues.project.name}}
+						{{issues.subject}}
+					{{/issue-detail-card}}
+				{{/link-to}}
+			{{else}}
+				<p>There are no issues in this project</p>
+			{{/each}}
+
+			{{#each model as |projects|}}
+				{{model.parent.name}}
+			{{/each}}
+		</div>
+</div>

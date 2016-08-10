@@ -1,19 +1,25 @@
 	<header class="row">
 		<div class="container">
-			<span class="two-thirds column">
+			<span class="one-half column">
 				<h2 id="title"><strong class="red">Red</strong>stone</h2>
 				<!-- span id="tagline" class="two columns">- Redmine tracking fast forward</span-->
 			</span>
 
-			<nav class="one-third column">
-				{{link-to 'Dashboard' 'index'}}
-				{{link-to 'About' 'about'}}
+			<nav class="one-half column row">
+				{{!-- {{#if session.isAuthenticated}} --}}
+					{{link-to 'Dashboard' 'index' class='menu-fix columns'}}
+					{{link-to 'About' 'about' class='menu-fix columns'}}
+	    			<a onclick={{action 'invalidateSession'}} class="menu-fix columns">Logout</a>
+    			{{!-- {{else}}
+    				{{link-to 'About' 'about' class='one-third column'}}
+    				{{link-to 'Login' 'login' class='one-third column'}}
+  				{{/if}} --}}
 			</nav>
 		</div>
 	</header>
-	<div class="container">
+	<section class="outlet-wrapper">
 		{{outlet}}
-	</div>
+	</section>
 	<footer class="row">
 		<div class="container">
 			<div class="two-thirds column">
@@ -25,7 +31,7 @@
 			</div>
 			<p class="one-third column">
 				{{#link-to 'index' id="headerLogo"}}
-					<img id="logo" class="rightAligned"  src="assets/Redstone.png">
+					<img id="logo" class="rightAligned"  src="assets/img/Redstone.png">
 				{{/link-to}}
 			</p>
 		</div>

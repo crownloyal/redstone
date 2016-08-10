@@ -1,0 +1,30 @@
+<section class="about-pattern-arches">
+	<div class="container ">
+	<h3 class="four columns offset-by-three">Authentication</h3>
+		<div class="six columns offset-by-three" id="login-wrapper">
+			<form {{action "authenticate" on="submit"}}>
+				<p>
+				{{#if login-username}}
+				Hi <strong>{{login-username}}</strong>!
+				{{else}}
+				Hi there!
+				{{/if}}
+				<br />
+				You will need to use your AD credentials.
+				</p>
+				<label for="login-username">NT User Name:</label>
+				{{input value=login-username id="login-username" class="u-full-width"}}
+
+				<label for="login-password">Password:</label>
+				{{input type="password" value=login-password id="login-password" class="u-full-width"}}
+
+				<hr />
+
+				<button type="submit" disabled={{disableToggle}}>{{loginButtonState}}</button>
+
+				<br />{{errorMessage}}
+
+			</form>
+		</div>
+	</div>
+</section>

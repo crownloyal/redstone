@@ -1,46 +1,54 @@
-<h4>Dashboard</h4>
+<div class="container">
 
-<section id="dashboard" class="row">
-	<div class="two-thirds column">
-		{{input type="search" value=search placeholder="Search..."}}
-	</div>
-	<div class="one-third column">
-		<p class="note">
-			The search allows you to look through issues and projects - ultimately enableling you too add multiple ones and to generate a graph.
-		</p>
-	</div>
-</section>
+	<h3>Dashboard</h3>
 
-<hr />
+	<section id="dashboard" class="row">
+		<div class="two-thirds column search {{if isFocused 'input--filled' ''}}">
+			{{search-box value=search id="search-box" focus-in="focused" type="search" focus-out="checkFocused"}}
+			<label class="inputLabel" for="search-box" >
+				<span class="labelContent" data-content="Search">Search</span>
+			</label>
+		</div>
+		<div class="one-third column">
+			<p class="note card">
+				The search allows you to look through issues and projects - ultimately enabling you too add multiple ones and to generate an activity graph.
+			</p>
+		</div>
+	</section>
 
-<section>
-	{{#if search}}
-		<p>Here are the results for {{search}}</p>
+	<hr />
 
-		{{#each search as |issues|}}
-			<div class="one-third column">
-				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}Sample{{/link-to}}<br />
-				<strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
-				<strong>Subject:</strong> {{issues.subject}}<br />
-				<strong>Last updated:</strong> {{moment-from-now model.updated_on interval=1000}}</p>
-			</div>
-		{{/each}}
+		{{!-- {{#each queryResults as |results index|}}
+	    	{{project-chart model=model id=model.project.id}}
+	    {{/each}} --}}
+
+
+	<section>
+
+	{{#if currentlyLoading}}
+
+		<p>{{fa-icon "fa-circle-o-notch" spin=true}} Grabbing data...</p>
 
 	{{else}}
-		<p>Here is a full list of current issues</p>
 
-		<div class="row">
-			{{#each model.issues as |issues|}}
-				<div class="one-third column">
-				<p><strong>Ticket #</strong> {{#link-to 'issues' issues}}{{issues.id}}{{/link-to}}<br />
-				   <strong>Project:</strong> {{#link-to 'projects' issues.project.id}}{{issues.project.name}}{{/link-to}}<br />
-				   <!--strong>Subject:</strong> {{issues.subject}}<br /-->
-				   <strong>Last updated:</strong> {{moment-from-now issues.updated_on}}</p>
-				</div>
-			{{else}}
-				<div class="one-half column"><p>Hang on a second...</p></div>
-			{{/each}}
-		</div>
+		{{#if search}}
+			<h5>Here are the results for <strong>{{search}}</strong></h5>
+			<p>Displaying {{queryResults.length}} results</p>
+		{{else}}
+			<h5>Latest tickets:</h5>
+		{{/if}}
+
+		<div class="masonry">
+	    {{#each queryResults as |result index|}}
+	    	{{#link-to 'issues' result.id}}
+	        	{{#issue-detail-card id=result.id updated=result.updated_on projectid=result.project.id project=result.project.name}}
+					{{result.subject}}
+				{{/issue-detail-card}}
+			{{/link-to}}
+	    {{/each}}
+	    </div>
+
 	{{/if}}
 
-</section>
+	</section>
+</div>
