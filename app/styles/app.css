@@ -12,6 +12,11 @@
 @ red-ish BLACK - #352525
 **/
 
+/** ! TEMP FIX for broken asset queue **/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css');
+
+
 /*** TYPO ***/
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
@@ -91,6 +96,7 @@ nav { padding: 1rem 0;
 /* SEARCH ANIMATION */
 .content {  margin: 3rem 0; }
 .outlet-wrapper .container { padding: 3.5rem 0; }
+p#full-description { white-space: pre; }
 input#datepicker { width: 6rem; }
 
 input { transition: border 0.3s; }

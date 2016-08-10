@@ -23,6 +23,7 @@
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "0.7.1",
     "ember-async-button": "git+https://github.com/DockYard/ember-async-button.git#7ecc1418c6ac0603eafdf2d8ceca3eeb54f5f39f",
+    "ember-async-image": "0.1.1",
     "ember-cli": "^2.4.3",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.6",
@@ -36,9 +37,10 @@
     "ember-cli-moment-shim": "1.0.0",
     "ember-cli-qunit": "^1.4.0",
     "ember-cli-release": "0.2.8",
+    "ember-cli-skeleton": "0.0.5",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
-    "ember-data": "^2.4.2",
+    "ember-data": "^2.8.0-beta.1",
     "ember-data-preload": "0.1.1",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.5",
@@ -47,11 +49,14 @@
     "ember-load-initializers": "^0.5.1",
     "ember-moment": "6.0.0",
     "ember-resolver": "^2.0.3",
+    "ember-run-raf": "1.1.2",
+    "ember-service-worker-cache-first": "0.1.0",
     "ember-simple-auth": "1.1.0",
     "emberx-select": "2.1.0",
     "graceful-fs": "^4.1.4",
     "loader.js": "^4.0.1",
     "moment": "2.11.2",
-    "moment-timezone": "0.5.0"
+    "moment-timezone": "0.5.0",
+    "smoke-and-mirrors": "0.5.4"
   }
 }
