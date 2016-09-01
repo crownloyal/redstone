@@ -17,7 +17,7 @@ import BaseAuthorizer from 'ember-simple-auth/authorizers/base';
 export default BaseAuthorizer.extend({
 
 	restore(){
-		return RSVP.resolve(data);
+		return Ember.RSVP.resolve(data);
 	},
 	authenticate(identification, password) {
 

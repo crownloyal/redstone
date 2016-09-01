@@ -3,11 +3,11 @@
 
 ### Story and idea of this Project ###
 
-_Once upon a time..._
-
 Redstone provides real-time analytical models for Mozy Redmine activity. Based on Redmine's current reporting and analysis capabilities stakeholders can not *easily* track activity patterns and based on external variables.
 
 Therefore we developed a user-facing web app which pulls Redmine's data and manages it by dates. You are able to look for certain tags and combine them to create custom graphs.
+
+It's also a pretty fast redmine client.
 
 ### Workflow ###
 
@@ -31,6 +31,16 @@ The data is coming from the only source of truth - the production REDMINE databa
 
 ### Changelog ###
 
+##### March 13 2016 #####
+_EOD commit : ade7e08_
+- refactored project controller methods to work independently
+- micro-services
+- changed readme
+
+##### March 11 2016 #####
+_EOD commit : fa65c60_
+- fixed search priorization
+- added day item
 
 ##### March 10 2016 #####
 _EOD commit : c302fb7_

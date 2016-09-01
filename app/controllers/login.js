@@ -31,16 +31,15 @@ export default Ember.Controller.extend({
       		this.get('session', 'Send Credentials').authenticate('authenticator:http-basic', identification, password)
       			.then((data) => {
               Ember.RSVP.resolve('success!', 'Login successful!');
+              this.toggleProperty('disableToggle');
       		  })
-            .fail((reason) => {
+            .catch((reason) => {
               Ember.RSVP.reject(reason.status, 'Credentials incorrect!');
 
               this.set('loginButtonState', 'Try again');
-        			this.set('errorMessage', 'Credentials incorrect!');
-      		  })
-            .always(() => {
+        			this.set('errorMessage', reason);
               this.toggleProperty('disableToggle');
-            });
+      		  });
       	}
 }
 
