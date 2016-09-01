@@ -18,7 +18,7 @@ import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.RESTAdapter.extend(DataAdapterMixin, {
 
-	host: 'http://redmine.mozy.lab.emc.com',
+	host: '', //enter host address here
 	namespace: '',
 	buildURL: function(record, suffix) {
 		return this._super(record, suffix) + '.json';
