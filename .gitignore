@@ -16,3 +16,4 @@
 npm-debug.log
 testem.log
 graphHelper_old.js
+.DS_Store
