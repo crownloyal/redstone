@@ -1,5 +1,7 @@
 # Ember Redstone Project
 
+This repository is inactive and not mainained anymore
+
 _Once upon a time..._
 _Redmine is a ugly mostrum from ancient times. A king seeked out for brave code warriors who who bring piece to the land and the people. The knights forged a sword made from purest red stone._
 
