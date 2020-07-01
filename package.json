@@ -54,7 +54,7 @@
     "emberx-select": "2.1.0",
     "graceful-fs": "^4.1.4",
     "loader.js": "^4.0.1",
-    "moment": "2.11.2",
+    "moment": "2.27.0",
     "moment-timezone": "0.5.0",
     "smoke-and-mirrors": "0.5.4"
   }
